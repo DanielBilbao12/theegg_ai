@@ -14,4 +14,5 @@ Con el valor introducido expresado en modo de fraccion, se calcula el maximo com
 # CODIGO
 
 El problema se ha resuelto usando Python 3.7 y el IDE Visual Studio 2019.
+
 La solucion se encuentra en el fichero "Tarea_21.py" y consta de una region en la que se almacena la funcion para el calculo del MCD y el Main, el cual se ejecuta en cuanto se termina el codigo de la region anteriormente mencionada.
