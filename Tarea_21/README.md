@@ -16,3 +16,5 @@ Con el valor introducido expresado en modo de fraccion, se calcula el maximo com
 El problema se ha resuelto usando Python 3.7 y el IDE Visual Studio 2019.
 
 La solucion se encuentra en el fichero "Tarea_21.py" dentro de la carpeta "Tarea_21" y consta de una region en la que se almacena la funcion para el calculo del MCD y el Main, el cual se ejecuta en cuanto se termina el codigo de la region anteriormente mencionada.
+
+En cuanto a la forma de uso, el programa simplemente espera a que el usuario introduzca un valor y responde con la fraccion irreducible. En caso de introducir caracteres salta un mensaje de error.
