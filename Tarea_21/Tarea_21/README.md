@@ -11,7 +11,7 @@ Para la solucion de este ejercicio, teniendo en cuenta que el valor a introducir
 
 Con el valor introducido expresado en modo de fraccion, se calcula el maximo comun divisor (MCD) entre ambos numeros (En este caso 2500) y se divide entre el numerador y el denominador (Siguiendo el ejemplo, quedando 1/4)
 
-#CODIGO
+# CODIGO
 
 El problema se ha resuelto usando Python 3.7 y el IDE Visual Studio 2019.
 La solucion se encuentra en el fichero "Tarea_21.py" y consta de una region en la que se almacena la funcion para el calculo del MCD y el Main, el cual se ejecuta en cuanto se termina el codigo de la region anteriormente mencionada.
