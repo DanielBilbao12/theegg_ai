@@ -26,4 +26,5 @@ def main():
     print(numerador,"/",denominador)
 #endregion
 
-main()
+while 1:
+    main()

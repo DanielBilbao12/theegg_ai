@@ -15,6 +15,15 @@ Con el valor introducido expresado en modo de fraccion, se calcula el maximo com
 
 El problema se ha resuelto usando Python 3.7 y el IDE Visual Studio 2019.
 
-La solucion se encuentra en el fichero "Tarea_21.py" dentro de la carpeta "Tarea_21" y consta de una region en la que se almacena la funcion para el calculo del MCD y el Main, el cual se ejecuta en cuanto se termina el codigo de la region anteriormente mencionada.
+La solucion se encuentra en el fichero "Tarea_21.py" dentro de la carpeta "Tarea_21" y consta de una region en la que se almacena la funcion para el calculo del MCD y el Main, el cual se ejecuta en un bucle infinito en cuanto se termina el codigo de la region anteriormente mencionada.
 
-En cuanto a la forma de uso, el programa simplemente espera a que el usuario introduzca un valor y responde con la fraccion irreducible. En caso de introducir caracteres salta un mensaje de error.
+En cuanto a la forma de uso, el programa simplemente espera a que el usuario introduzca un valor y responde con la fraccion irreducible. En caso de introducir caracteres o nada salta un mensaje de error.
+
+# POSIBLES MEJORAS
+
+El programa creado se podria mejorar en varios aspectos pero teniendo en cuenta el enunciado y la NOTA del reto, se han seguido dichos criterios.
+
+Como primera mejora, se podria definir mediante una funcion el numero de decimales que va a contener el numero a introducir. En caso de que no se introdujera el numero de decimales dejariamos las 4 cifras decimales como valor constante.
+Ademas, se podria comprobar que el valor introducido por el usuario sea un valor decimal con las caracteristicas predefinidas.
+
+Como segunda mejora, en vez de ejecutar el main en un bucle infinito, se podria preguntar al usuario si quiere seguir calculado fracciones irreducibles, en caso de que quiera seguir pues seguiriamos con el proceso de calculo y en caso de que se quiera dejar de calcular la fraccion irreducible detener el programa.
