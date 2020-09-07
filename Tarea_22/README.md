@@ -23,6 +23,12 @@ Salida: Cantidad máxima de producción de leche se puede obtener.
 
 
 
-# POSIBLES MEJORAS
+# PRIMERAS IDEAS
+
+Lo primero, crear una clase "vacas" para poder jugar con sus atributos (masa, produccion...)
+
+Despues, utilizar la recursividad para calcular la maxima produccion de leche
+
+Y por ultimo, crear el main. De esta manera pedimos al usuario los datos de entrada (Vacas por tolosa, masa que soporta el camion, lista de pesos de las vacas, lista de producion (L/dia) por vaca)
 
 
