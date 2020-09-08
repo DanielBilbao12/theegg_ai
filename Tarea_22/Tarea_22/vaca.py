@@ -6,7 +6,7 @@ class Vaca:
         self.produccion=produccion
         self.id=id
     def Info(self):
-        print("La vaca numero "+str(self.id)+" pesa "+str(self.peso)+" y produce "+str(self.produccion)+" litros por dia")
+        print("La vaca numero "+str(self.id)+" pesa "+str(self.peso)+" kilos y produce "+str(self.produccion)+" litros por dia")
 
 
 
