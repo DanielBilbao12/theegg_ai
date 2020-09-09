@@ -43,18 +43,6 @@ def MostrarVacasEnVenta(x):
     for i in range(len(x)):
         x[i].Info()
 
-def ValorMaximo(x,y):
-    """Funcion que calcula el valor maximo entre dos valores
-    Parametros:
-        -x: Valor 1 (Son valores dentro de una lista)
-        -y: Valor 2 (Son valores dentro de una lista)
-    Return:
-        -Retorna el valor mas grande entre los 2 que se comparan
-    """
-    if(x > y): #ME FALLA AQUI!!!!
-        return x
-    return y
-
 def CalculoDeProduccion(ListaVacas, CapacidadCamion, TotalProduccion, TotalPesoCamion, indice):
     """Funcion recursiva para calcular la Maxima producción que se puede obtener con las vacas en venta y la capacidad del camion
     Parametros:
@@ -72,9 +60,9 @@ def CalculoDeProduccion(ListaVacas, CapacidadCamion, TotalProduccion, TotalPesoC
             return CalculoDeProduccion(ListaVacas,CapacidadCamion,TotalProduccion,TotalPesoCamion,indice+1)
         else:
             #Opcion valida, llamamos de nuevo a la funcion pero analizando la siguiente vaca teniendo en cuenta que cojemos la anterior
-            return ValorMaximo(CalculoDeProduccion(ListaVacas,CapacidadCamion,TotalProduccion+VacaPosible.produccion,TotalPesoCamion+VacaPosible.peso,indice+1),
-                               CalculoDeProduccion(ListaVacas,CapacidadCamion,TotalProduccion,TotalPesoCamion,indice+1))
-        return TotalProduccion #ME FALLA!!!!
+            return max(CalculoDeProduccion(ListaVacas,CapacidadCamion,TotalProduccion+VacaPosible.produccion,TotalPesoCamion+VacaPosible.peso,indice+1),
+                               CalculoDeProduccion(ListaVacas,CapacidadCamion,TotalProduccion,TotalPesoCamion,indice+1)) #ME FALLA NONETYPE ERROR...!!!!
+        return float(TotalProduccion)
 
 def main():
     VacasEnVenta=[]
