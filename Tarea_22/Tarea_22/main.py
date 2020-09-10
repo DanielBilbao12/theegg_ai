@@ -53,13 +53,11 @@ def CalculoDeProduccion(ListaVacas, CapacidadCamion, TotalProduccion, TotalPesoC
     Return:
         - La produccion maxima que se puede obtener
     """
-    if(indice<len(ListaVacas)): #Si todabia no hemos terminado de ver todas las posibilidades..
-        VacaPosible=ListaVacas[indice] #Añado a la variable "VacaPosible" un objeto de la lista de vacas disponibles
-        if(TotalPesoCamion+VacaPosible.peso>CapacidadCamion): #Si el peso que tiene ya el camion mas el peso de la vaca posible es mayor que la capacidad total del camion...
-            #Opcion no valida, llamamos de nuevo a la funcion pero analizando la siguiente vaca
+    if(indice<len(ListaVacas)): 
+        VacaPosible=ListaVacas[indice] 
+        if(TotalPesoCamion+VacaPosible.peso>CapacidadCamion): 
             return CalculoDeProduccion(ListaVacas,CapacidadCamion,TotalProduccion,TotalPesoCamion,indice+1)
         else:
-            #Opcion valida, llamamos de nuevo a la funcion pero analizando la siguiente vaca teniendo en cuenta que cojemos la anterior y cojemos el resultado que de mas produccion de leche (con la anterior y sin la anterior)
             return max(CalculoDeProduccion(ListaVacas,CapacidadCamion,TotalProduccion+VacaPosible.produccion,TotalPesoCamion+VacaPosible.peso,indice+1),
                                CalculoDeProduccion(ListaVacas,CapacidadCamion,TotalProduccion,TotalPesoCamion,indice+1))
     return TotalProduccion
@@ -83,7 +81,7 @@ def main():
     #Entrada 2
     PesoCamion=ValidarDecimal(input("Introduce el peso (kg) que puede soportar el camion:"))
     #Entradas 3 y 4
-    for i in range(1, TotalVacas+1):
+    for i in range(1, TotalVacas+1,1):
         peso=ValidarDecimal(input("Introduce el peso (kg) de la vaca numero "+str(i)+":"))
         produccion=ValidarDecimal(input("Introduce la produccion (L/dia) de la vaca numero "+str(i)+":"))
         VacaRegistrada=Vaca(peso,produccion,i)
