@@ -23,7 +23,7 @@ En cuanto a la funcion recursiva, "CalculoDeProduccion", en primer lugar se eval
 Entonces, si la tara del camion es menor a la que ya tenia mas el peso de la vaca posible ("VacaPosible"), esa vaca no puede ser cargada y se evalua el siguiente caso sin esta vaca.
 En caso de que la tara del camion fuese mayor a la que tenia mas el peso de la vaca posible ("VacaPosible"), esa vaca puede ser cargada y se evalua el caso siguiente con esa vaca cargada y sin cargar, quedandonos con el caso en el que la produccion sea mayor.
 
-De esta manera, se analizan todos los casos posibles y mediante la funcion max() se consigue el valor maximo de produccion que se puede obtener.
+De esta manera, se analizan todos los casos posibles y mediante la funcion max() se consigue el valor maximo de produccion que se puede obtener para cada uno de los casos
 
 
 # CÓDIGO
