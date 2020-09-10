@@ -5,7 +5,11 @@ Usted es un original empresario de Azkoitia, y tiene la brillante idea de abrir 
 1.- Para este propósito tienes que definir las siguientes entradas:
 
 Entrada: Número total de vacas en la zona de Tolosa que están a la venta. 
-Entrada: Peso total que el camión puede llevar. Entrada: Lista de pesos de las vacas. 
+
+Entrada: Peso total que el camión puede llevar. 
+
+Entrada: Lista de pesos de las vacas. 
+
 Entrada: Lista de la producción de leche por vaca, en litros por día.
 
 2.- El algoritmo que programes tiene que calcular la siguiente salida:
