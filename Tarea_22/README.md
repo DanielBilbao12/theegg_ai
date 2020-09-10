@@ -41,7 +41,7 @@ Cabe destacar, que para la resolucion de este ejercicio se han seguido varias re
 
 	- Foro de TheEgg: Búsqueda heuristica en el algoritmo del lechero? 
 		* Gracias a las sugerencias e ideas propuestas en este hilo del foro, me di cuenta de que la recursividad era una buena opcion para la resolucion de este ejercicio.
-		* En particular, el README.md del repositorio de Eneko Bikandi (https://github.com/enekobi/theegg_ai)
+		* En particular, el README.md del repositorio de Eneko Bikandi (https://github.com/enekobi/theegg_ai) me ayudo mucho a entender la recursividad gracias a el arbol que tiene representado
 
 
 	- Youtube: Video de la Universidad Catolica de Murcia (https://www.youtube.com/watch?v=XQYGwKiqV3Y)
