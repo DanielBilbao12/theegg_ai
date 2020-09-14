@@ -38,6 +38,8 @@ La solución se encuentra en la ruta theegg_ai/Tarea_22/Tarea_22, donde se pueden
 
 En cuanto a la forma de uso, cuando se ejecuta el programa, este empieza preguntando la cantidad de vacas por tolosa, tara del camion y datos sobre las vacas. Cuando se determina la maxima produccion que se puede obtener, el programa pregunta si se desea hacer otro analisis con otras vacas y en caso de que se responda "NO" el programa se detiene y en caso de que se responda "SI" el programa se vuelve a ejecutar.
 
+Nota: Dejo el enlace del programa en "Google Colab" para poder ejecutar el codigo en linea. Como no manejo el uso de modulos desde esa plataforma, creo la clase Vaca en el propio main para poder usarla. (https://colab.research.google.com/drive/1mksMCtJ7LdUpKsFBn-_KFkRSaig0D0kP?usp=sharing)
+
 
 # REFERENCIAS
 
