@@ -19,6 +19,8 @@ La solucion se encuentra en el fichero "Tarea_21.py" dentro de la carpeta "Tarea
 
 En cuanto a la forma de uso, el programa simplemente espera a que el usuario introduzca un valor y responde con la fraccion irreducible. En caso de introducir caracteres o nada salta un mensaje de error.
 
+Nota: Dejo el enlace del programa en "Google Colab" para poder ejecutar el ejercicio en linea. (https://colab.research.google.com/drive/1sdzHHE3X_-JF-l3J9o3K9wEoJHNH6HgY?usp=sharing)
+
 # POSIBLES MEJORAS
 
 El programa creado se podria mejorar en varios aspectos pero teniendo en cuenta el enunciado y la NOTA del reto, se han seguido dichos criterios.
