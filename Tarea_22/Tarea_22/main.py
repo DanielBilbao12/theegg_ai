@@ -34,7 +34,7 @@ def ValidarDecimal(x):
             print("VALOR INCORRECTO")
             x=input("Introduce un valor numerico positivo:")
 
-def MostrarVacasEnVenta(x):
+def MostrarInfoVacas(x):
     """Funcion que muestra un listado de las vacas en venta disponibles y sus estadisticas
     Parametros:
         -x: Lista de de objetos Vaca
@@ -43,24 +43,26 @@ def MostrarVacasEnVenta(x):
     for i in range(len(x)):
         x[i].Info()
 
-def CalculoDeProduccion(ListaVacas, CapacidadCamion, TotalProduccion, TotalPesoCamion, indice):
+def CalculoDeProduccion(ListaVacas, CapacidadCamion, TotalProduccion, TotalPesoCamion, indice, VacasCompradas):
     """Funcion recursiva para calcular la Maxima producción que se puede obtener con las vacas en venta y la capacidad del camion
     Parametros:
         -ListaVacas: Lista de Objetos Vaca
         -CapacidadCamion: Peso que soporta el camion en kg
         -TotalProduccion: Cantidad de leche que se produce por dia en caso de llevarse el numero de vacas que se han analizado hasta el momento, su valor va cambiando
         -TotalPesoCamion: Cantidad de peso que lleva el camion en caso de llevarse el numero de vacas que se han analizadno hasta el momento, su valor va cambiando
+        -VacasCompradas: Lista de objetos vaca en la que se almacenan las vacas que se compren
     Return:
-        - La produccion maxima que se puede obtener
+        - La produccion maxima que se puede obtener y una lista de objetos vaca, en este caso, la lista almacena las vacas compradas
     """
     if(indice<len(ListaVacas)): 
         VacaPosible=ListaVacas[indice] 
         if(TotalPesoCamion+VacaPosible.peso>CapacidadCamion): 
-            return CalculoDeProduccion(ListaVacas,CapacidadCamion,TotalProduccion,TotalPesoCamion,indice+1)
+            return CalculoDeProduccion(ListaVacas,CapacidadCamion,TotalProduccion,TotalPesoCamion,indice+1, VacasCompradas)
         else:
-            return max(CalculoDeProduccion(ListaVacas,CapacidadCamion,TotalProduccion+VacaPosible.produccion,TotalPesoCamion+VacaPosible.peso,indice+1),
-                               CalculoDeProduccion(ListaVacas,CapacidadCamion,TotalProduccion,TotalPesoCamion,indice+1))
-    return TotalProduccion
+            return max(CalculoDeProduccion(ListaVacas,CapacidadCamion,TotalProduccion+VacaPosible.produccion,TotalPesoCamion+VacaPosible.peso,indice+1, VacasCompradas[:]+[VacaPosible]),
+                               CalculoDeProduccion(ListaVacas,CapacidadCamion,TotalProduccion,TotalPesoCamion,indice+1, VacasCompradas))
+
+    return [TotalProduccion, VacasCompradas]
 
 def RespuestaCorrecta(x):
     """Funcion para comprobar que la respuesta del usuario es SI o NO
@@ -86,9 +88,11 @@ def main():
         produccion=ValidarDecimal(input("Introduce la produccion (L/dia) de la vaca numero "+str(i)+":"))
         VacaRegistrada=Vaca(peso,produccion,i)
         VacasEnVenta.append(VacaRegistrada)
-    MostrarVacasEnVenta(VacasEnVenta)
-    ProduccionMaxima=CalculoDeProduccion(VacasEnVenta,PesoCamion,0,0,0)
+    MostrarInfoVacas(VacasEnVenta)
+    [ProduccionMaxima, VacasAdquiridas]=CalculoDeProduccion(VacasEnVenta,PesoCamion,0,0,0,[])
     print("\nLa producion maxima que se puede obtener es de: "+str(ProduccionMaxima)+" Litros")
+    print("\nA continuacion se muestra la lista de vacas compradas para obtener dicha produccion:")
+    MostrarInfoVacas(VacasAdquiridas)
 #endregion
 
 respuesta=""

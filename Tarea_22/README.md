@@ -56,4 +56,4 @@ Cabe destacar, que para la resolucion de este ejercicio se han seguido varias re
 
 # POSIBLES MEJORAS
 
-Como posible mejora, se podria almacenar en una lista las vacas que se han comprado para obtener esa produccion maxima (podriamos almacenar los indices de las vacas) y a la hora de reflejar la cantidad maxima de produccion que se puede obtener, se podria reflejar con que vacas se obtendria ese valor.
+Como posible mejora, se podria almacenar en una lista las vacas que se han comprado para obtener esa produccion maxima (podriamos almacenar los indices de las vacas) y a la hora de reflejar la cantidad maxima de produccion que se puede obtener, se podria reflejar con que vacas se obtendria ese valor. --> Mejora Aplicada
