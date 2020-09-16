@@ -41,7 +41,10 @@ def main():
     frase=input("Introduzca una frase a cifrar: ") #Esta es la frase que tenemos que cifrar
     print(Cifrado1(frase))
     baraja=Baraja()
-    baraja.MostrarBaraja()
+    baraja.mazo.append(Carta("A","Comodin"))
+    baraja.mazo.append(Carta("B","Comodin"))
+    for carta in range(0,len(baraja.mazo),1):
+        print("La carta numero "+str(carta+1)+" es "+str(baraja.mazo[carta]))
    
 #endregion
 
