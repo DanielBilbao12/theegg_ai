@@ -23,6 +23,29 @@ def DividirCadena(cadena, separador, numeroCaracteres):
         frase += caracter
     return frase
 
+def GenerarBaraja():
+    baraja=Baraja()
+    baraja.mazo.append(Carta("A","Comodin"))
+    baraja.mazo.append(Carta("B","Comodin"))
+    return baraja
+
+def MostrarBaraja(baraja):
+    for carta in range(0,len(baraja.mazo),1):
+        print("La carta numero "+str(carta+1)+" es "+str(baraja.mazo[carta]))
+
+def BuscarComodines(mazo):
+    indice=0
+    for carta in mazo:
+        if carta.valor == "Comodin" and carta.palo=="A":
+            IndiceComodinA=indice
+            indice=indice+1
+        elif carta.valor =="Comodin" and carta.palo=="B":
+            IndiceComodinB=indice
+            indice=indice+1
+        else:
+            indice=indice+1
+    return [IndiceComodinA,IndiceComodinB]
+
 def Cifrado1 (mensaje): #Primer paso del cifrado, divide la frase en grupos de 5 letras y si hacen falta caracteres se le añade 'X' al final
     """Funcion que hace el primer paso para el cifrado
     Parametros:
@@ -36,16 +59,24 @@ def Cifrado1 (mensaje): #Primer paso del cifrado, divide la frase en grupos de 5
     mensaje=DividirCadena(mensaje," ",5) #Separo el string en cadenas de 5 caracteres
     return mensaje
 
-
 def main():
     frase=input("Introduzca una frase a cifrar: ") #Esta es la frase que tenemos que cifrar
-    print(Cifrado1(frase))
-    baraja=Baraja()
-    baraja.mazo.append(Carta("A","Comodin"))
-    baraja.mazo.append(Carta("B","Comodin"))
-    for carta in range(0,len(baraja.mazo),1):
-        print("La carta numero "+str(carta+1)+" es "+str(baraja.mazo[carta]))
-   
+    frase=Cifrado1(frase)
+    print(frase)
+    baraja1=GenerarBaraja()
+    MostrarBaraja(baraja1)
+    ristra=""
+    while len(frase)<len(ristra): #Mientras que la dimension de la ristra sea menor que la del mensaje a cifrar, generamos caracteres (Solitario)
+        [ComodinA,ComodinB]=BuscarComodines(baraja1.mazo) #Almaceno los indices de los dos comodines
+        #Pongo el comodin A una posicion por debajo de la que estaba
+        #Pongo el comodin B dos posiciones por debajo de la que estaba
+        #Corto la baraja e intercambio las cartas encima del primer comodin por las de debajo del segundo comodin
+        #Miro la ultima carta y cuento el numero que sea desde arriba
+        #UNa vez contado, corto la baraja dejando la carta de la ultima posicion tal y como esta
+        #Observo la primera carta, cuento, y almaceno que carta es.--> Esta carta se convierte a letra y ya tenemos el primer caracter
+
+
+
 #endregion
 
 main()
