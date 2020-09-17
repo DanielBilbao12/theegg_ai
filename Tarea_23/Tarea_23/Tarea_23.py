@@ -66,9 +66,15 @@ def main():
     baraja1=GenerarBaraja()
     MostrarBaraja(baraja1)
     ristra=""
-    while len(frase)<len(ristra): #Mientras que la dimension de la ristra sea menor que la del mensaje a cifrar, generamos caracteres (Solitario)
-        [ComodinA,ComodinB]=BuscarComodines(baraja1.mazo) #Almaceno los indices de los dos comodines
-        #Pongo el comodin A una posicion por debajo de la que estaba
+    #while len(frase)>len(ristra): #Mientras que la dimension de la ristra sea menor que la del mensaje a cifrar, generamos caracteres (Solitario)
+    [ComodinA,ComodinB]=BuscarComodines(baraja1.mazo) #Almaceno los indices de los dos comodines
+        #Pongo el comodin A una posicion por debajo de la que estaba--> Hay que modificar, en caso de que sea la ultima carta, se empieza desde arriba otra vez
+    print("El primer paso es cambiar el comodin A de la posicion "+str(ComodinA+1)+" a la posicion "+str(ComodinA+2))
+    CartaComodinA= baraja1.mazo[ComodinA]
+    Auxiliar=baraja1.mazo[ComodinA+1]
+    baraja1.mazo[ComodinA+1]=CartaComodinA
+    baraja1.mazo[ComodinA]=Auxiliar
+    MostrarBaraja(baraja1)
         #Pongo el comodin B dos posiciones por debajo de la que estaba
         #Corto la baraja e intercambio las cartas encima del primer comodin por las de debajo del segundo comodin
         #Miro la ultima carta y cuento el numero que sea desde arriba
