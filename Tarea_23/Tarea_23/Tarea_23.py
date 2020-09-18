@@ -37,14 +37,40 @@ def BuscarComodines(mazo):
     indice=0
     for carta in mazo:
         if carta.valor == "Comodin" and carta.palo=="A":
-            IndiceComodinA=indice
+            IndiceA=indice
             indice=indice+1
         elif carta.valor =="Comodin" and carta.palo=="B":
-            IndiceComodinB=indice
+            IndiceB=indice
             indice=indice+1
         else:
             indice=indice+1
-    return [IndiceComodinA,IndiceComodinB]
+    return [IndiceA,IndiceB]
+
+def MoverComodinA(indice,baraja):
+    if indice==53 : #Si El comodin A esta en la ultima posicion, empezamos a contar desde arriba del mazo
+        CartaComodinA=baraja.mazo[indice]
+        baraja.mazo.pop(indice)
+        indice=0
+        baraja.mazo.insert(indice+1,CartaComodinA)
+        MostrarBaraja(baraja)
+    else:
+        CartaComodinA= baraja.mazo[indice]
+        baraja.mazo.pop(indice)
+        baraja.mazo.insert(indice+1,CartaComodinA)
+        MostrarBaraja(baraja)
+
+def MoverComodinB(indice,baraja):
+    if indice>51: #Si el comodin B esta en la penultima o ultima posicion, empezamos a contar desde arriba del mazo
+        CartaComodinB=baraja.mazo[indice]
+        baraja.mazo.pop(indice)
+        indice=0
+        baraja.mazo.insert(indice+1,CartaComodinB)
+        MostrarBaraja(baraja)
+    else:
+        CartaComodinB= baraja.mazo[indice]
+        baraja.mazo.pop(indice)
+        baraja.mazo.insert(indice+2,CartaComodinB)
+        MostrarBaraja(baraja)
 
 def Cifrado1 (mensaje): #Primer paso del cifrado, divide la frase en grupos de 5 letras y si hacen falta caracteres se le añade 'X' al final
     """Funcion que hace el primer paso para el cifrado
@@ -59,29 +85,29 @@ def Cifrado1 (mensaje): #Primer paso del cifrado, divide la frase en grupos de 5
     mensaje=DividirCadena(mensaje," ",5) #Separo el string en cadenas de 5 caracteres
     return mensaje
 
+def Solitario (baraja):
+    #Encontrar comodinA y moverlo debajo de la carta que tiene debajo
+    [IndiceComodinA,IndiceComodinB]=BuscarComodines(baraja.mazo)
+    print("\nEl primer paso es cambiar el comodin A debajo de la carta que tiene debajo")
+    MoverComodinA(IndiceComodinA,baraja)
+    #Encontrar comodinB y moverlo por la carta de abajo de la que tiene debajo
+    [IndiceComodinA,IndiceComodinB]=BuscarComodines(baraja.mazo)
+    print("\nEl segundo paso es cambiar el comodin B por a carta de abajo de la que tiene debajo")
+    MoverComodinB(IndiceComodinB,baraja)
+    #Corto la baraja e intercambio las cartas encima del primer comodin por las de debajo del segundo comodin
+    #Miro la ultima carta y cuento el numero que sea desde arriba
+    #Una vez contado, corto la baraja dejando la carta de la ultima posicion tal y como esta
+    #Observo la primera carta, cuento, y almaceno que carta es.--> Esta carta se convierte a letra y ya tenemos el primer caracter
+
 def main():
     frase=input("Introduzca una frase a cifrar: ") #Esta es la frase que tenemos que cifrar
     frase=Cifrado1(frase)
     print(frase)
     baraja1=GenerarBaraja()
     MostrarBaraja(baraja1)
-    ristra=""
+    #ristra=""
     #while len(frase)>len(ristra): #Mientras que la dimension de la ristra sea menor que la del mensaje a cifrar, generamos caracteres (Solitario)
-    [ComodinA,ComodinB]=BuscarComodines(baraja1.mazo) #Almaceno los indices de los dos comodines
-        #Pongo el comodin A una posicion por debajo de la que estaba--> Hay que modificar, en caso de que sea la ultima carta, se empieza desde arriba otra vez
-    print("El primer paso es cambiar el comodin A de la posicion "+str(ComodinA+1)+" a la posicion "+str(ComodinA+2))
-    CartaComodinA= baraja1.mazo[ComodinA]
-    Auxiliar=baraja1.mazo[ComodinA+1]
-    baraja1.mazo[ComodinA+1]=CartaComodinA
-    baraja1.mazo[ComodinA]=Auxiliar
-    MostrarBaraja(baraja1)
-        #Pongo el comodin B dos posiciones por debajo de la que estaba
-        #Corto la baraja e intercambio las cartas encima del primer comodin por las de debajo del segundo comodin
-        #Miro la ultima carta y cuento el numero que sea desde arriba
-        #UNa vez contado, corto la baraja dejando la carta de la ultima posicion tal y como esta
-        #Observo la primera carta, cuento, y almaceno que carta es.--> Esta carta se convierte a letra y ya tenemos el primer caracter
-
-
+    Solitario(baraja1) 
 
 #endregion
 
