@@ -1,11 +1,11 @@
 #Definicion de la clase baraja
 
 class Carta :
-    def __init__(self,palo,valor):
+    def __init__(self,valor,palo):
         self.palo=palo
         self.valor=valor
-    def __str__(self):#Funcion para que cuando se printen estos objetos, no se muestre "Baraja.Carta object at 0x0000...(direccion de memoria)
-        return "[{}--{}]".format(self.palo,self.valor)
+    def __str__(self): #Funcion para que cuando se printen estos objetos, no se muestre "Baraja.Carta object at 0x0000...(direccion de memoria)
+        return "[{}--{}]".format(self.valor,self.palo)
 
 
 class Baraja :

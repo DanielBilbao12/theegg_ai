@@ -3,6 +3,7 @@
 
 from Baraja import *
 
+
 #region
 def DividirCadena(cadena, separador, numeroCaracteres):
     """Funcion que divide una cadena (string) cada x caracteres y le añade el separador que se le indique
@@ -36,10 +37,10 @@ def MostrarBaraja(baraja):
 def BuscarComodines(mazo):
     indice=0
     for carta in mazo:
-        if carta.valor == "Comodin" and carta.palo=="A":
+        if carta.valor == "A" and carta.palo=="Comodin":
             IndiceA=indice
             indice=indice+1
-        elif carta.valor =="Comodin" and carta.palo=="B":
+        elif carta.valor =="B" and carta.palo=="Comodin":
             IndiceB=indice
             indice=indice+1
         else:
@@ -72,6 +73,17 @@ def MoverComodinB(indice,baraja):
         baraja.mazo.insert(indice+2,CartaComodinB)
         MostrarBaraja(baraja)
 
+def CortarEntreComodines(baraja):
+    [IndiceComodinA, IndiceComodinB]=BuscarComodines(baraja.mazo) #Localizo donde estan los comodines
+    IndicePrimerComodin=min(IndiceComodinA,IndiceComodinB) #Primer comodin es el que tenga indice menor
+    IndiceSegundoComodin=max(IndiceComodinA,IndiceComodinB) #Segundo comodin es el que tenga indice mayor
+    PrimerTrozo=baraja.mazo[0:IndicePrimerComodin]
+    TrozoMedio=baraja.mazo[IndicePrimerComodin:IndiceSegundoComodin+1]
+    SegundoTrozo=baraja.mazo[IndiceSegundoComodin+1:len(baraja.mazo)]
+    baraja.mazo=SegundoTrozo+TrozoMedio+PrimerTrozo
+    print("\nLa baraja tras el corte entre comodines queda asi:")
+    MostrarBaraja(baraja)
+
 def Cifrado1 (mensaje): #Primer paso del cifrado, divide la frase en grupos de 5 letras y si hacen falta caracteres se le añade 'X' al final
     """Funcion que hace el primer paso para el cifrado
     Parametros:
@@ -95,7 +107,12 @@ def Solitario (baraja):
     print("\nEl segundo paso es cambiar el comodin B por a carta de abajo de la que tiene debajo")
     MoverComodinB(IndiceComodinB,baraja)
     #Corto la baraja e intercambio las cartas encima del primer comodin por las de debajo del segundo comodin
-    #Miro la ultima carta y cuento el numero que sea desde arriba
+    CortarEntreComodines(baraja)
+    #Miro la ultima carta y cuento el numero que sea desde arriba--> si la ultima carta es comodin, se deja la baraja igual
+    UltimaCarta=baraja.mazo[53]
+    ValorUltimaCarta=UltimaCarta.valor
+    print("\nLa ultima carta del mazo es un "+str(UltimaCarta)+" por lo que su valor es de "+str(ValorUltimaCarta))
+    #AHORA TENGO QUE HACER LA JUGADA DE SUMAR 13 A LOS DIAMANTES, 26 A LOS CORAZONES Y 39 A LAS PICAS
     #Una vez contado, corto la baraja dejando la carta de la ultima posicion tal y como esta
     #Observo la primera carta, cuento, y almaceno que carta es.--> Esta carta se convierte a letra y ya tenemos el primer caracter
 
@@ -104,10 +121,13 @@ def main():
     frase=Cifrado1(frase)
     print(frase)
     baraja1=GenerarBaraja()
+    print("\nLa baraja inicialmente esta asi:") #CUANTO TERMINE DE PROGRAMAR EL ALGORITMO CON ESTA CLAVE QUE HE DEFINIDO, MODIFICAR EL PROGRAMA PARA PEDIR CLAVE AL USUARIO Y BARAJAR RESPECTO A ESA CLAVE
     MostrarBaraja(baraja1)
     #ristra=""
     #while len(frase)>len(ristra): #Mientras que la dimension de la ristra sea menor que la del mensaje a cifrar, generamos caracteres (Solitario)
-    Solitario(baraja1) 
+    Solitario(baraja1)
+
+
 
 #endregion
 
