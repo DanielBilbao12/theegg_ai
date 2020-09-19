@@ -5,7 +5,7 @@ from Baraja import *
 
 #Variable global para la conversion de NUMERO-LETRA
 diccionario={1:"a",2:"b",3:"c",4:"d",5:"e",6:"f",7:"g",8:"h",9:"i",10:"j",11:"k",12:"l",13:"m",14:"n",15:"o",16:"p",17:"q",18:"r",19:"s",20:"t",21:"u",22:"v",23:"w",24:"x",25:"y",26:"z"}
-
+diccionario2={"a":1,"b":2,"c":3,"d":4,"e":5,"f":6,"g":7,"h":8,"i":9,"j":10,"k":11,"l":12,"m":13,"n":14,"o":15,"p":16,"q":17,"r":18,"s":19,"t":20,"u":21,"v":22,"w":23,"x":24,"y":25,"z":26}
 #region
 def DividirCadena(cadena, separador, numeroCaracteres):
     """Funcion que divide una cadena (string) cada x caracteres y le añade el separador que se le indique
@@ -208,20 +208,48 @@ def Solitario (baraja):
     return Letra.upper()
 
 def main():
-    frase=input("Introduzca una frase a cifrar: ") #Esta es la frase que tenemos que cifrar
+    Frase=input("Introduzca una frase a cifrar: ") #Esta es la frase que tenemos que cifrar
     #PRIMER PASO DEL CIFRADO
-    frase=Cifrado1(frase)
-    print(frase)
+    Frase=Cifrado1(Frase)
+    print(Frase)
     baraja1=GenerarBaraja()
     print("\nLa baraja inicialmente esta asi:") #CUANTO TERMINE DE PROGRAMAR EL ALGORITMO CON ESTA CLAVE QUE HE DEFINIDO, MODIFICAR EL PROGRAMA PARA PEDIR CLAVE AL USUARIO Y BARAJAR RESPECTO A ESA CLAVE
     MostrarBaraja(baraja1)
     #SEGUNDO PASO DEL CIFRADO
-    Ristra=Cifrado2(frase,baraja1)
+    Ristra=Cifrado2(Frase,baraja1)
     #TERCER PASO DEL CIFRADO--> SUMAR FRASE Y RISTRA
     #PRIMERO: CONVERTIR FRASE A NUMEROS
-
-    #SEGUNDO: CONVERTIR RITRA A NUMEROS
-    #TERCERO: SUMARLO Y CONVERTIR EL RESULTADO DE CADA SUMA A LETRA, JUNTARLAS EN UNA FRASE, Y TEXTO CIFRADO
+    FraseNumerica=[]
+    for letra in Frase: #Para cada letra en la frase
+        for k,v in diccionario2.items(): #Miro el diccionario
+            if k.upper()==letra.upper(): #Si el diccionario contiene la letra
+                FraseNumerica.append(diccionario2[k])
+    #SEGUNDO: CONVERTIR RISTRA A NUMEROS
+    RistraNumerica=[]
+    for letra in Ristra:
+        for k,v in diccionario2.items():
+            if k.upper()==letra.upper():
+                RistraNumerica.append(diccionario2[k])
+    #TERCERO: SUMARLO LA RISTRANUMERICA Y LA FRASENUMERICA
+    CifradoNumerico=[]
+    for i in range(0,len(FraseNumerica),1):
+        if FraseNumerica[i]+RistraNumerica[i]>26:
+            CifradoNumerico.append(FraseNumerica[i]+RistraNumerica[i]-26)
+        else:
+            CifradoNumerico.append(FraseNumerica[i]+RistraNumerica[i])
+    #CUARTO: CONVERTIR CIFRADONUMERICO A LETRAS Y ¡MENSAJE CIFRADO! -->ERROR, HAY QUE ARREGLARLO
+    MensajeCifrado=""
+    for i in range(0, len(Ristra),1):
+        for k,v in diccionario.items():
+            if Ristra[i]==" ":
+                MensajeCifrado=MensajeCifrado+" "
+                i+=1
+            else:
+                if i>len(CifradoNumerico):
+                    break
+                if k==CifradoNumerico[i]:
+                    MensajeCifrado=MensajeCifrado+diccionario[k]
+    print(MensajeCifrado.upper())
 #endregion
 
 main()
