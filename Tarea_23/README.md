@@ -12,7 +12,7 @@ Para la solucion de este ejercicio, se ha utilizado una clase Baraja que genera 
 
 En primer lugar, se han creado una clase "Baraja" y una clase "Carta" para generar una baraja real. Partiendo de ahi, se pide al usuario una frase a cifrar y una clave.
 
-En caso de que no se introduzca ninguna clave, se utiliza la baraja creada por defecto tanto para el receptor como para el emisor. En caso de que se introduzca una clave, se convierte cada caracter de la clave a numeros y se realiza el paso 4 del algoritmo del solitario para barajear el mazo siguiendo dicha clave. Con la baraja preparada, se empieza con el cifrado.
+En caso de que no se introduzca ninguna clave, se utiliza la baraja creada por defecto tanto para el receptor como para el emisor. En caso de que se introduzca una clave, se convierte cada caracter de la clave a numeros y se realiza el paso 4 del algoritmo del solitario para barajar el mazo siguiendo dicha clave. Con la baraja preparada, se empieza con el cifrado.
 Como primer paso del cifrado, se genera una ristra de igual tamaño y disposicion que la frase a cifrar (Cabe destacar que la frase a cifrar se separa en subgrupos de 5 caracteres y que en caso de que falten caracteres se le añaden 'X'-es). Con la ristra generada, se suma la frase a cifrar y la ristra, obteniendo el MENSAJE CIFRADO.
 
 A continuacion, teniendo en cuenta que el emisor y el receptor tienen la misma baraja de la misma manera ordenada, la ristra que generan cada uno de los participantes es la misma, por lo que para descifrar el mensaje, basta con restar la ristra al mensaje cifrado, obteniendo el MENSAJE DESCIFRADO.
@@ -26,7 +26,7 @@ La solucion se encuentra en la ruta theegg_ai/Tarea_23/Tarea_23, donde se pueden
 En cuanto a la forma de uso, cuando se ejecuta el programa (main.py), este pregunta la frase a cifrar y la clave. En caso de que no se introduzca nada como clave se toma la baraja por defecto tanto para el receptor como para el emisor.
 Una vez introducidos los datos mencionados anteriormente (frase y clave) el programa muestra todas las iteracciones de la baraja, la ristra generada, el mensaje cifrado y el mensaje descifrado.
 
-Nota: Dejo el enlace del programa en "Google Colab" para poder ejecutar el codigo en linea. Como no manejo el uso de modulos desde esa plataforma, creo las clases Baraja y Carta en el propio main para poder usarla. (https://colab.research.google.com/drive/1rYPoW00TVu49V2w5q1t3LEs4lfiD56cF?usp=sharing)
+Nota: Dejo el enlace del programa en "Google Colab" para poder ejecutar el codigo en linea. Como no manejo el uso de modulos desde esa plataforma, creo las clases Baraja y Carta en el propio main para poder usarlas. (https://colab.research.google.com/drive/1rYPoW00TVu49V2w5q1t3LEs4lfiD56cF?usp=sharing)
 
 # POSIBLES MEJORAS
 
