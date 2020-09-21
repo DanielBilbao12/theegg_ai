@@ -175,8 +175,53 @@ def Cifrado2 (mensaje,baraja):
                     ristra=ristra+Solitario(baraja)
                 else:
                     ristra=ristra+" "
-    print("\nLa ristra generada es la siguiente: "+str(ristra))
+    #print("\nLa ristra generada es la siguiente: "+str(ristra))
     return ristra
+
+def Cifrado3(mensaje,ristra):
+    #PRIMERO: CONVERTIR FRASE A NUMEROS
+    FraseNumerica=[]
+    for letra in mensaje: #Para cada letra en la frase
+        for k,v in diccionario2.items(): #Miro el diccionario
+            if k.upper()==letra.upper(): #Si el diccionario contiene la letra
+                FraseNumerica.append(diccionario2[k])
+    #SEGUNDO: CONVERTIR RISTRA A NUMEROS
+    RistraNumerica=[]
+    for letra in ristra:
+        for k,v in diccionario2.items():
+            if k.upper()==letra.upper():
+                RistraNumerica.append(diccionario2[k])
+    #TERCERO: SUMARLO LA RISTRANUMERICA Y LA FRASENUMERICA
+    CifradoNumerico=[]
+    for i in range(0,len(FraseNumerica),1):
+        if FraseNumerica[i]+RistraNumerica[i]>26:
+            CifradoNumerico.append(FraseNumerica[i]+RistraNumerica[i]-26)
+        else:
+            CifradoNumerico.append(FraseNumerica[i]+RistraNumerica[i])
+    #CUARTO: CONVERTIR CIFRADONUMERICO A LETRAS Y ¡MENSAJE CIFRADO!
+    MensajeCifrado=""
+    for i in range(0, len(CifradoNumerico),1):
+        for k,v in diccionario.items():
+            if k==CifradoNumerico[i]:
+                MensajeCifrado+=diccionario[k]
+    MensajeCifrado=DividirCadena(MensajeCifrado," ",5)
+    return [MensajeCifrado,RistraNumerica,CifradoNumerico]
+
+def Descifrado1(CifradoNumerico, RistraNumerica):
+    DescifradoNumerico=[]
+    for i in range(0,len(CifradoNumerico),1):
+        if CifradoNumerico[i]-RistraNumerica[i]<0:
+            DescifradoNumerico.append(CifradoNumerico[i]-RistraNumerica[i]+26)
+        else:
+            DescifradoNumerico.append(CifradoNumerico[i]-RistraNumerica[i])
+    #UNA VEZ TENGO LA RESTA DE FORMA NUMERICA, CONVERTIR A LETRAS Y MENSAJE DESCIFRADO!
+    MensajeDescifrado=""
+    for i in range(0, len(DescifradoNumerico),1):
+        for k,v in diccionario.items():
+            if k==DescifradoNumerico[i]:
+                MensajeDescifrado+=diccionario[k]
+    MensajeDescifrado=DividirCadena(MensajeDescifrado," ",5)
+    return MensajeDescifrado
 
 def Solitario (baraja):
     #Encontrar comodinA y moverlo debajo de la carta que tiene debajo
@@ -209,6 +254,7 @@ def Solitario (baraja):
 
 def main():
     Frase=input("Introduzca una frase a cifrar: ") #Esta es la frase que tenemos que cifrar
+    #CIFRADO
     #PRIMER PASO DEL CIFRADO
     Frase=Cifrado1(Frase)
     print(Frase)
@@ -218,38 +264,11 @@ def main():
     #SEGUNDO PASO DEL CIFRADO
     Ristra=Cifrado2(Frase,baraja1)
     #TERCER PASO DEL CIFRADO--> SUMAR FRASE Y RISTRA
-    #PRIMERO: CONVERTIR FRASE A NUMEROS
-    FraseNumerica=[]
-    for letra in Frase: #Para cada letra en la frase
-        for k,v in diccionario2.items(): #Miro el diccionario
-            if k.upper()==letra.upper(): #Si el diccionario contiene la letra
-                FraseNumerica.append(diccionario2[k])
-    #SEGUNDO: CONVERTIR RISTRA A NUMEROS
-    RistraNumerica=[]
-    for letra in Ristra:
-        for k,v in diccionario2.items():
-            if k.upper()==letra.upper():
-                RistraNumerica.append(diccionario2[k])
-    #TERCERO: SUMARLO LA RISTRANUMERICA Y LA FRASENUMERICA
-    CifradoNumerico=[]
-    for i in range(0,len(FraseNumerica),1):
-        if FraseNumerica[i]+RistraNumerica[i]>26:
-            CifradoNumerico.append(FraseNumerica[i]+RistraNumerica[i]-26)
-        else:
-            CifradoNumerico.append(FraseNumerica[i]+RistraNumerica[i])
-    #CUARTO: CONVERTIR CIFRADONUMERICO A LETRAS Y ¡MENSAJE CIFRADO! -->ERROR, HAY QUE ARREGLARLO
-    MensajeCifrado=""
-    for i in range(0, len(Ristra),1):
-        for k,v in diccionario.items():
-            if Ristra[i]==" ":
-                MensajeCifrado=MensajeCifrado+" "
-                i+=1
-            else:
-                if i>len(CifradoNumerico):
-                    break
-                if k==CifradoNumerico[i]:
-                    MensajeCifrado=MensajeCifrado+diccionario[k]
-    print(MensajeCifrado.upper())
+    [Cifrado,RistraNumeros,CifradoNumeros]=Cifrado3(Frase,Ristra)
+    print("\nEl mensaje cifrado es el siguiente: "+str(Cifrado.upper()))
+    #DESCIFRADO --> tengo que restar el mensaje cifrado y la ristra y convertir a letras
+    Descifrado=Descifrado1(CifradoNumeros,RistraNumeros)
+    print("\nEl mensaje descifrado es el siguiente: "+str(Descifrado.upper()))
 #endregion
 
 main()
