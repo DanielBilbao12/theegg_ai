@@ -3,9 +3,10 @@
 
 from Baraja import *
 
-#Variable global para la conversion de NUMERO-LETRA
+#Variables globales para la conversion de NUMERO-LETRA-NUMERO
 diccionario={1:"a",2:"b",3:"c",4:"d",5:"e",6:"f",7:"g",8:"h",9:"i",10:"j",11:"k",12:"l",13:"m",14:"n",15:"o",16:"p",17:"q",18:"r",19:"s",20:"t",21:"u",22:"v",23:"w",24:"x",25:"y",26:"z"}
 diccionario2={"a":1,"b":2,"c":3,"d":4,"e":5,"f":6,"g":7,"h":8,"i":9,"j":10,"k":11,"l":12,"m":13,"n":14,"o":15,"p":16,"q":17,"r":18,"s":19,"t":20,"u":21,"v":22,"w":23,"x":24,"y":25,"z":26}
+
 #region
 def DividirCadena(cadena, separador, numeroCaracteres):
     """Funcion que divide una cadena (string) cada x caracteres y le añade el separador que se le indique
@@ -27,16 +28,30 @@ def DividirCadena(cadena, separador, numeroCaracteres):
     return frase
 
 def GenerarBaraja():
+    """Funcion que genera una baraja ordenada de A a K (TREBOLES, DIAMANTES, CORAZONES Y PICAS) y el comodin A y B como ultimas cartas de la baraja
+    Return
+        - Devuelve la baraja
+    """
     baraja=Baraja()
     baraja.mazo.append(Carta("A","Comodin"))
     baraja.mazo.append(Carta("B","Comodin"))
     return baraja
 
 def MostrarBaraja(baraja):
+    """Funcion que muestra la disposicion de la baraja
+    Parametros:
+        -baraja: Variable que almacena la baraja
+    """
     for carta in range(0,len(baraja.mazo),1):
         print("La carta numero "+str(carta+1)+" es "+str(baraja.mazo[carta]))
 
 def BuscarComodines(mazo):
+    """Funcion que localica las posiciones de los comodines en la baraja
+    Parametros:
+        -mazo: Variable que almacena el mazo que compone la baraja
+    Return:
+        -Devuelve los indices del comodin A y comodin B respectivamente
+    """
     indice=0
     for carta in mazo:
         if carta.valor == "A" and carta.palo=="Comodin":
@@ -50,6 +65,11 @@ def BuscarComodines(mazo):
     return [IndiceA,IndiceB]
 
 def MoverComodinA(indice,baraja):
+    """Funcion que mueve el comodin A debajo de la carta que tiene debajo
+    Parametros:
+        -indice: Posicion en la baraja del comodin A
+        -baraja: Variable que almacena la baraja
+    """
     if indice==53 : #Si El comodin A esta en la ultima posicion, empezamos a contar desde arriba del mazo
         CartaComodinA=baraja.mazo[indice]
         baraja.mazo.pop(indice)
@@ -63,6 +83,11 @@ def MoverComodinA(indice,baraja):
         MostrarBaraja(baraja)
 
 def MoverComodinB(indice,baraja):
+    """Funcion que mueve el comodin B debajo de la segunda carta que tiene debajo
+    Parametros:
+        -indice: Posicion en la baraja del comodin B
+        -baraja: Variable que almacena la baraja
+    """
     if indice>51: #Si el comodin B esta en la penultima o ultima posicion, empezamos a contar desde arriba del mazo
         CartaComodinB=baraja.mazo[indice]
         baraja.mazo.pop(indice)
@@ -76,6 +101,10 @@ def MoverComodinB(indice,baraja):
         MostrarBaraja(baraja)
 
 def CortarEntreComodines(baraja):
+    """Funcion que corta la baraja entre el primer comodin y el segundo comodin
+    Parametros:
+        -baraja: Variable que almacena la barajs
+    """
     [IndiceComodinA, IndiceComodinB]=BuscarComodines(baraja.mazo) #Localizo donde estan los comodines
     IndicePrimerComodin=min(IndiceComodinA,IndiceComodinB) #Primer comodin es el que tenga indice menor
     IndiceSegundoComodin=max(IndiceComodinA,IndiceComodinB) #Segundo comodin es el que tenga indice mayor
@@ -87,6 +116,10 @@ def CortarEntreComodines(baraja):
     MostrarBaraja(baraja)
 
 def CortarMirandoUltimaCarta(baraja):
+    """Funcion que corta la baraja dependiendo de la ultima carta de la misma, dejando la ultima carta estatica
+    Parametros:
+        -baraja: Variable que almacena la baraja
+    """
     UltimaCarta=baraja.mazo[53]
     if UltimaCarta.palo=="Comodin": #Si la ultima carta es comodin, se deja la baraja igual
         print("\nComo la ultima carta es comodin, la baraja no cambia")
@@ -110,6 +143,12 @@ def CortarMirandoUltimaCarta(baraja):
         MostrarBaraja(baraja)
 
 def ObtenerCaracter(baraja):
+    """Funcion que obtiene el caracter correspondiente a la primera carta
+    Parametros:
+        -baraja: Variable que almacena la baraja
+    Return:
+        - Devuelve el objeto carta correspondiente al caracter
+    """
     PrimeraCarta=baraja.mazo[0]
     ValorNumericoPrimeraCarta=ConversionValorNumero(PrimeraCarta.valor)
     if PrimeraCarta.palo=="Treboles":
@@ -126,6 +165,12 @@ def ObtenerCaracter(baraja):
     return CartaCaracter
 
 def ConversionValorNumero(x):
+    """Funcion para convertir el valor de la carta a un numero entero
+    Parametros:
+        -x: Valor de la carta a convertir
+    Return:
+        - Devuelve el valor numerico de la carta
+    """
     if x=="A":
         valor=1
     elif x=="2":
@@ -168,6 +213,13 @@ def Cifrado1 (mensaje): #Primer paso del cifrado, divide la frase en grupos de 5
     return mensaje
 
 def Cifrado2 (mensaje,baraja):
+    """Funcion que hace el segundo paso del cifrado
+    Parametros:
+        -mensaje: Mensaje a cifrar
+        -baraja: Variable que almacena la baraja
+    Return:
+        - Devuelve la ristra que se genera para el cifrado y descifrado del mensaje
+    """
     ristra=""
     while len(mensaje)>len(ristra): #Mientras que la dimension de la ristra sea menor que la del mensaje a cifrar, generamos caracteres (Solitario)
         for letra in mensaje:
@@ -175,10 +227,17 @@ def Cifrado2 (mensaje,baraja):
                     ristra=ristra+Solitario(baraja)
                 else:
                     ristra=ristra+" "
-    #print("\nLa ristra generada es la siguiente: "+str(ristra))
+    print("\nLa ristra generada es la siguiente: "+str(ristra))
     return ristra
 
 def Cifrado3(mensaje,ristra):
+    """Funcion que hace el tercer paso del cifrado
+    Parametros:
+        -mensaje: Mensaje a cifrar
+        -baraja: Variable que almacena la baraja
+    Return:
+        -Devuelve el mensaje cifrado, la ristra de forma numerica y el mensaje cifrado de forma numerica
+    """
     #PRIMERO: CONVERTIR FRASE A NUMEROS
     FraseNumerica=[]
     for letra in mensaje: #Para cada letra en la frase
@@ -208,6 +267,13 @@ def Cifrado3(mensaje,ristra):
     return [MensajeCifrado,RistraNumerica,CifradoNumerico]
 
 def Descifrado1(CifradoNumerico, RistraNumerica):
+    """Funcion que se encarga de descifrar el mensaje cifrado
+    Parametros:
+        -CifradoNumerico: Mensaje cifrado de forma numerica
+        -RistraNumerica: Ristra de forma numerica
+    Return:
+        - Devuelve el mensaje descifrado
+    """
     DescifradoNumerico=[]
     for i in range(0,len(CifradoNumerico),1):
         if CifradoNumerico[i]-RistraNumerica[i]<0:
@@ -224,6 +290,12 @@ def Descifrado1(CifradoNumerico, RistraNumerica):
     return MensajeDescifrado
 
 def Solitario (baraja):
+    """Funcion para aplicar solitario a la baraja
+    Parametros:
+        -baraja: Variable que almacena la baraja
+    Return:
+        - Devuelve la letra que se genera cada vez que se aplica solitario
+    """
     #Encontrar comodinA y moverlo debajo de la carta que tiene debajo
     [IndiceComodinA,IndiceComodinB]=BuscarComodines(baraja.mazo)
     print("\nEl primer paso es cambiar el comodin A debajo de la carta que tiene debajo")
@@ -254,19 +326,21 @@ def Solitario (baraja):
 
 def main():
     Frase=input("Introduzca una frase a cifrar: ") #Esta es la frase que tenemos que cifrar
+    #Clave=input("Introduzca una clave (En caso de que no se introduzca nada se utilizara la baraja por defecto tanto para el emisor como para el receptor):")
     #CIFRADO
     #PRIMER PASO DEL CIFRADO
     Frase=Cifrado1(Frase)
     print(Frase)
     baraja1=GenerarBaraja()
-    print("\nLa baraja inicialmente esta asi:") #CUANTO TERMINE DE PROGRAMAR EL ALGORITMO CON ESTA CLAVE QUE HE DEFINIDO, MODIFICAR EL PROGRAMA PARA PEDIR CLAVE AL USUARIO Y BARAJAR RESPECTO A ESA CLAVE
+    print("\nLa baraja inicialmente esta asi:")
     MostrarBaraja(baraja1)
     #SEGUNDO PASO DEL CIFRADO
     Ristra=Cifrado2(Frase,baraja1)
     #TERCER PASO DEL CIFRADO--> SUMAR FRASE Y RISTRA
     [Cifrado,RistraNumeros,CifradoNumeros]=Cifrado3(Frase,Ristra)
     print("\nEl mensaje cifrado es el siguiente: "+str(Cifrado.upper()))
-    #DESCIFRADO --> tengo que restar el mensaje cifrado y la ristra y convertir a letras
+
+    #DESCIFRADO
     Descifrado=Descifrado1(CifradoNumeros,RistraNumeros)
     print("\nEl mensaje descifrado es el siguiente: "+str(Descifrado.upper()))
 #endregion
