@@ -8,6 +8,8 @@ diccionario={1:"a",2:"b",3:"c",4:"d",5:"e",6:"f",7:"g",8:"h",9:"i",10:"j",11:"k"
 diccionario2={"a":1,"b":2,"c":3,"d":4,"e":5,"f":6,"g":7,"h":8,"i":9,"j":10,"k":11,"l":12,"m":13,"n":14,"o":15,"p":16,"q":17,"r":18,"s":19,"t":20,"u":21,"v":22,"w":23,"x":24,"y":25,"z":26}
 
 #region
+def ValidarCadena (string):
+    while string.
 def DividirCadena(cadena, separador, numeroCaracteres):
     """Funcion que divide una cadena (string) cada x caracteres y le añade el separador que se le indique
     Parametros:
@@ -142,6 +144,21 @@ def CortarMirandoUltimaCarta(baraja):
         baraja.mazo=TrozoMedio+PrimerTrozo+SegundoTrozo
         MostrarBaraja(baraja)
 
+def OrdenarSegunClave(baraja,clave):
+    #Convierto la clave en un array de numeros
+    ClaveNumerica=[]
+    for letra in clave:
+        for k,v in diccionario2.items():
+            if k.upper()==letra.upper():
+                ClaveNumerica.append(diccionario2[k])
+    #Con la clave convertida a numeros dentro de la lista, corto la baraja contando esos numeros
+    for i in range(0,len(ClaveNumerica),1):
+        ValorAContar=ClaveNumerica[i]
+        PrimerTrozo=baraja.mazo[0:ValorAContar]
+        TrozoMedio=baraja.mazo[ValorAContar:len(baraja.mazo)-1]
+        SegundoTrozo=baraja.mazo[len(baraja.mazo)-1:]
+        baraja.mazo=TrozoMedio+PrimerTrozo+SegundoTrozo
+
 def ObtenerCaracter(baraja):
     """Funcion que obtiene el caracter correspondiente a la primera carta
     Parametros:
@@ -212,7 +229,7 @@ def Cifrado1 (mensaje): #Primer paso del cifrado, divide la frase en grupos de 5
     mensaje=DividirCadena(mensaje," ",5) #Separo el string en cadenas de 5 caracteres
     return mensaje
 
-def Cifrado2 (mensaje,baraja):
+def Cifrado2 (mensaje,baraja,clave):
     """Funcion que hace el segundo paso del cifrado
     Parametros:
         -mensaje: Mensaje a cifrar
@@ -224,7 +241,7 @@ def Cifrado2 (mensaje,baraja):
     while len(mensaje)>len(ristra): #Mientras que la dimension de la ristra sea menor que la del mensaje a cifrar, generamos caracteres (Solitario)
         for letra in mensaje:
                 if letra!=" ":
-                    ristra=ristra+Solitario(baraja)
+                    ristra=ristra+Solitario(baraja,clave)
                 else:
                     ristra=ristra+" "
     print("\nLa ristra generada es la siguiente: "+str(ristra))
@@ -289,7 +306,7 @@ def Descifrado1(CifradoNumerico, RistraNumerica):
     MensajeDescifrado=DividirCadena(MensajeDescifrado," ",5)
     return MensajeDescifrado
 
-def Solitario (baraja):
+def Solitario (baraja, clave):
     """Funcion para aplicar solitario a la baraja
     Parametros:
         -baraja: Variable que almacena la baraja
@@ -313,7 +330,7 @@ def Solitario (baraja):
     global ValorLetra
     Caracter=ObtenerCaracter(baraja)
     if Caracter.palo=="Comodin":
-        Solitario(baraja) #APLICO RECURSIVIDAD
+        Solitario(baraja,clave) #APLICO RECURSIVIDAD
     #Convertir el caracter a letra, y ya esta "solitario"
     if Caracter.palo=="Diamantes" or Caracter.palo=="Picas":
         ValorLetra=ConversionValorNumero(Caracter.valor)+13
@@ -326,16 +343,16 @@ def Solitario (baraja):
 
 def main():
     Frase=input("Introduzca una frase a cifrar: ") #Esta es la frase que tenemos que cifrar
-    #Clave=input("Introduzca una clave (En caso de que no se introduzca nada se utilizara la baraja por defecto tanto para el emisor como para el receptor):")
+    Clave=input("Introduzca una clave (En caso de que no se introduzca nada se utilizara la baraja por defecto tanto para el emisor como para el receptor):")
     #CIFRADO
     #PRIMER PASO DEL CIFRADO
     Frase=Cifrado1(Frase)
     print(Frase)
     baraja1=GenerarBaraja()
-    print("\nLa baraja inicialmente esta asi:")
-    MostrarBaraja(baraja1)
+    if Clave!="": #Si se introduce una clave, ordenamos la baraja siguiendo la clave
+        OrdenarSegunClave(baraja1,Clave)
     #SEGUNDO PASO DEL CIFRADO
-    Ristra=Cifrado2(Frase,baraja1)
+    Ristra=Cifrado2(Frase,baraja1,Clave)
     #TERCER PASO DEL CIFRADO--> SUMAR FRASE Y RISTRA
     [Cifrado,RistraNumeros,CifradoNumeros]=Cifrado3(Frase,Ristra)
     print("\nEl mensaje cifrado es el siguiente: "+str(Cifrado.upper()))
