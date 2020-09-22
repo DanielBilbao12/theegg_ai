@@ -16,7 +16,7 @@ def ConversionBinaria (numero):
     binario.reverse()
     return "".join(binario)
 
-def ValidarDecimal(numero):
+def ValidarEntero(numero):
     """Funcion que valida que la entrada del usuario es un valor numerico entero
     Parametros:
         -numero: Numero introducido por el usuario
@@ -44,7 +44,7 @@ def RespuestaCorrecta (x):
     return x
 
 def main():
-    Numero=ValidarDecimal(input("Introduzca un valor entero para la conversion a binario:"))
+    Numero=ValidarEntero(input("Introduzca un valor entero para la conversion a binario:"))
     Binario=ConversionBinaria(Numero)
     print ("El numero "+str(Numero)+" en binario se expresa como: "+str(Binario))
 #endregion
