@@ -52,4 +52,4 @@ def main():
 respuesta=""
 while respuesta.upper()!="NO":
     main()
-    respuesta=RespuestaCorrecta(input("¿Desea realizar otra conversion a binario?"))
+    respuesta=RespuestaCorrecta(input("¿Desea realizar otra conversión a binario?"))
