@@ -340,6 +340,18 @@ def Solitario (baraja, clave):
             Letra=diccionario[k]
     return Letra.upper()
 
+def RespuestaCorrecta (x):
+    """Funcion para comprobar que la respuesta del usuario es SI o NO
+    Parametros:
+        -x= String
+    Return:
+        -Devuelve la respuesta SI o NO
+    """
+    while x.upper()!="NO" and x.upper()!="SI":
+        print("RESPUESTA INCORRECTA, RESPONDA CON UN SI O UN NO")
+        x=input("¿Desea CIFRAR-DESCIFRAR otro mensaje?")
+    return x
+
 def main():
     Frase=input("Introduzca una frase a cifrar: ") #Esta es la frase que tenemos que cifrar
     Clave=input("Introduzca una clave (En caso de que no se introduzca nada se utilizara la baraja por defecto tanto para el emisor como para el receptor):")
@@ -361,4 +373,7 @@ def main():
     print("\nEl mensaje descifrado es el siguiente: "+str(Descifrado.upper()))
 #endregion
 
-main()
+respuesta=""
+while respuesta.upper()!="NO":
+    main()
+    respuesta=RespuestaCorrecta(input("¿Desea CIFRAR-DESCIFRAR otro mensaje?"))
