@@ -8,11 +8,12 @@ Para la resolucion de esta tarea se ha seguido el video, tal y como nos indica e
 
 Es decir, se ha creado una clase "Pokemon", se han creado dos objetos pokemon (Pikachu y Jigglypuff) y se ha decidido que empieza Pikachu atacando mediante la variable turno (Cuando turno=1 Ataca Pikachu, si turno=0 ataca Jigglypuff).
 
-Cuando la pelea termina, se muestra el registro de pelea (Las estadisticas de los pokemos que estan peleando) y el nombre del ganador.
+Cuando la pelea termina, se muestra el registro de pelea (Las estadisticas de los pokemons que estan peleando) y el nombre del ganador.
 
 # CÓDIGO
 
 El problema se ha resuelto usando Python 3.7 y el IDE Visual Studio 2019.
+
 La solucion se encuentra en el fichero "Tarea_33.py" dentro de la carpeta "Tarea_33" y consta de una region en la que se almacena la clase "Pokemon" y el Main, el cual se ejecuta en cuanto se termina el codigo de la region anteriormente mencionada.
 
 Referente a la forma de uso, simplemente hay que ejecutar el programa y visualizar quien ganó el combate.
