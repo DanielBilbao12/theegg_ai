@@ -4,7 +4,9 @@ with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 procedure Palindromo_TheEgg is
    --Variables globales
    nUsuario : Integer;
-   kont     : Integer;
+	  kont     : Integer;
+	  cEspera  : Character;
+
    --Subprogramas
    function InvertirNumero (x : Integer) return Integer is
       alreves, num : Integer;
@@ -60,5 +62,7 @@ begin
             exit;--Cuando printemos el primer palindromo primo, salimos del bucle, finalizamos la busqueda.
          end if;
       end if;
-   end loop;
+	end loop;
+Put("Pulse cualquier tecla para salir del programa..");
+Get_Immediate (cEspera) ; -- Pulsar una tecla para finalizar
 end Palindromo_TheEgg;
