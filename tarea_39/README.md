@@ -17,3 +17,5 @@ Para la resolución de esta tarea, en primer lugar se han seguido los pasos marca
 Tras entender lo que son las redes y las máscaras de subred, se ha instalado el Software de CISCO Packet Tracer.
 
 Con el Software instalado, se ha seguido un pequeño tutorial para entender el funcionamiento del mismo : [Enlace al turorial](https://www.youtube.com/watch?v=sqpFew3xEzI)
+
+Por último, se han realizado las tareas mencionadas en el enunciado.
