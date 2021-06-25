@@ -19,12 +19,13 @@ RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_IMPLICIT_LOOPS
 
-U main%b		main.adb		1cc0d6b4 NE OO SU
+U main%b		main.adb		85c9db6c NE OO SU
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
 W ada.strings.maps%s	a-strmap.adb		a-strmap.ali
 W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
@@ -49,6 +50,7 @@ D a-finali.ads		20200819050644 bf4f806b ada.finalization%s
 D a-ioexce.ads		20200819050644 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20200819050644 119b8fb3 ada.streams%s
 D a-string.ads		20200819050644 90ac6797 ada.strings%s
+D a-strfix.ads		20200819050644 86d6bc21 ada.strings.fixed%s
 D a-strmap.ads		20200819050644 e8bb714a ada.strings.maps%s
 D a-strunb.ads		20200819050644 1656705b ada.strings.unbounded%s
 D a-tags.ads		20200819050644 edddc8f0 ada.tags%s
@@ -56,7 +58,7 @@ D a-textio.ads		20200819050644 aef4d56d ada.text_io%s
 D a-unccon.ads		20200819050644 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20200819050646 5ab55268 interfaces%s
 D i-cstrea.ads		20200819050646 e53d8b8e interfaces.c_streams%s
-D main.adb		20210624161844 5ad8a7c7 main%b
+D main.adb		20210625164020 4507163e main%b
 D system.ads		20200819050648 32a08138 system%s
 D s-atocou.ads		20200819050646 b45c2d8d system.atomic_counters%s
 D s-conca2.ads		20200819050646 02a0d7d0 system.concat_2%s
@@ -82,66 +84,80 @@ D s-traent.ads		20200819050648 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20200819050648 5ecf7212 system.unsigned_types%s
 D s-wchcon.ads		20200819050648 1b7d22d2 system.wch_con%s
 G a e
-G c Z b b [main standard 9 11 none]
+G c Z b b [main standard 8 11 none]
 X 1 ada.ads
-16K9*Ada 20e8 17|2r6 2r31 3r6 3r33 4r6 4r35 5r6 5r28 11r41 14r55 46r39
+16K9*Ada 20e8 18|2r6 2r31 3r6 3r33 4r6 4r35 5r6 5r28 6r6 6r29 10r41 14r55
+. 54r54 57r54 60r54 63r54
 X 2 a-charac.ads
-16K13*Characters 18e19 17|4r10 4r39
+16K13*Characters 18e19 18|4r10 4r39
 X 3 a-chahan.ads
-36K24*Handling 159e28 17|4w21 4r50
-67V13*To_Upper{character} 17|34s28 34s66 34s104 34s142
+36K24*Handling 159e28 18|4w21 4r50
+67V13*To_Upper{character} 18|39s28 39s66 39s104 39s142
 X 9 a-string.ads
-16K13*Strings 35e16 17|3r10 3r37 5r10 5r32 11r45 14r59 46r43
-X 10 a-strmap.ads
-38K21*Maps 411e21 17|5w18 5r40
-X 11 a-strunb.ads
-82K21*Unbounded 758e26 17|3w18 3r45 11r53 14r67 46r51
-87R9*Unbounded_String<6|43R9> 741e14 17|11r89 14r77 18r75 20r39 29r67 44r72
-. 52r77 68r42 69r49 70r57
-92V13*Length{natural} 17|22s20 22s36 33s29 47s29 95s21
-103V13*To_Unbounded_String{87R9} 17|46s61 75s41 78s43 81s41 84s43
-116V13*To_String{string} 17|56s90 58s173 89s59 90s59 96s72
-175V14*"&"{87R9} 17|46s84 48s67
-191V13*Element{character} 17|34s37 34s75 34s113 34s151 34s180 46s86 48s68
-332V13*Index{natural} 17|56s52
-X 13 a-textio.ads
-57K13*Text_IO 727e16 17|2w10 2r35
-495V13*Get_Line{string} 17|75s61 78s63 81s61 84s63
-508U14*Put_Line 17|37s33 58s33 63s25 74s9 77s25 80s9 83s25 89s9 90s9 94s9
-. 96s17
-X 17 main.adb
-9U11*Main 9b11 104l5 104t9
-11K17 StringIlimitado=11:53 11r73 18r59 20r23 29r51 44r56 52r61 56r74 58r157
-. 68r26 69r33 70r41 75r25 78r27 81r25 84r27 89r43 90r43 96r56
-14A14 Subcadenas(11|87R9)<integer> 15r26 44r117 52r118
-15a9 Subcadenas_Corta{14A14} 93m44 93r44 96r82 100r46
-18U19 Identificar_Larga 18b19 18=38 18=45 27l13 27t30 88s9
-18r38 Larga{11|87R9} 22r27 23r30 24m25
-18r45 Corta{11|87R9} 22r43 24r32 25m25
-20r17 aux{11|87R9} 23m25 25r32
-29V18 Comprobar_Secuencia{boolean} 29b18 29>39 42l13 42t32 76s15 82s15
-29r39 secuencia{11|87R9} 33r36 34r45 34r83 34r121 34r159 34r188
-31b17 correcto{boolean} 35m33 41r24
-33i21 i{integer} 34r55 34r93 34r131 34r169 34r198
-44U19 Encontrar_Subcadenas 44b19 44>41 44=91 50l13 50t33 93s9
-44r41 secuencia{11|87R9} 46r94 47r36 48r76
-44a91 Subcadenas_Corta{14A14} 46m17 48m25 48r46
-47i21 i{integer} 48r42 48r63 48r86
-52U12 Encontrar_Mayor_Coincidencia 52b12 52>42 52>96 65l6 65t34 100s3
-52r42 secuenciaLarga{11|87R9} 56r58
-52a96 Subcadenas_Corta{14A14} 55r26 56r100 58r183
-53i17 IndiceInicioCoincidencia{integer} 56m25 57r28 58r87 62r20
-55i13 i{integer} 56r117 58r200
-68r10 secuenciaADN1{11|87R9} 75m9 76r35 78m11 88m27 88r27 90r69 100r32
-69r17 secuenciaADN2{11|87R9} 81m9 82r35 84m11 88m42 88r42 89r69 93r30 95r28
-70r17 MayorSecuenciaEnComun{11|87R9}
-95i13 i{integer} 96r49 96r99
-X 18 system.ads
+16K13*Strings 35e16 18|3r10 3r37 5r10 5r32 6r10 6r33 10r45 14r59 54r58 57r58
+. 60r58 63r58
+X 10 a-strfix.ads
+43K21*Fixed 596e22 18|6w18 6r41
+X 11 a-strmap.ads
+38K21*Maps 411e21 18|5w18 5r40
+X 12 a-strunb.ads
+82K21*Unbounded 758e26 18|3w18 3r45 10r53 14r67 54r66 57r66 60r66 63r66
+87R9*Unbounded_String<6|43R9> 741e14 18|10r89 14r77 17r75 19r39 34r67 49r72
+. 77r77 93r42 94r49 95r57
+92V13*Length{natural} 18|21s20 21s36 27s29 38s29 52s29 56s34 59s34 62s34
+103V13*To_Unbounded_String{87R9} 18|54s76 57s76 60s76 63s76 100s41 103s43
+. 106s41 109s43
+116V13*To_String{string} 18|81s90 83s173 114s59 115s59 122s72
+191V13*Element{character} 18|39s37 39s75 39s113 39s151 39s180
+207V13*Slice{string} 18|54s96 57s96 60s96 63s96
+332V13*Index{natural} 18|81s52
+X 14 a-textio.ads
+57K13*Text_IO 727e16 18|2w10 2r35
+495V13*Get_Line{string} 18|100s61 103s63 106s61 109s63
+508U14*Put_Line 18|42s33 83s33 88s25 99s9 102s25 105s9 108s25 114s9 115s9
+. 120s9 122s17
+X 18 main.adb
+8U11*Main 8b11 127l5 127t9
+10K17 StringIlimitado=10:53 10r73 17r59 19r23 34r51 49r56 77r61 81r74 83r157
+. 93r26 94r33 95r41 100r25 103r27 106r25 109r27 114r43 115r43 122r56
+13i9 TamañoArray{integer} 113m57 113r57 117r48 119r63
+14A14 Subcadenas(12|87R9)<integer> 49r117 77r118 117r34
+17U19 Identificar_Larga 17b19 17=38 17=45 17=94 32l13 32t30 113s9
+17r38 Larga{12|87R9} 21r27 22r30 23m25
+17r45 Corta{12|87R9} 21r43 23r32 24m25 27r36
+17i94 LongitudArray{integer} 28m25 28r40 30m17 30r33
+19r17 aux{12|87R9} 22m25 24r32
+27i21 i{integer} 28r54
+34V18 Comprobar_Secuencia{boolean} 34b18 34>39 47l13 47t32 101s15 107s15
+34r39 secuencia{12|87R9} 38r36 39r45 39r83 39r121 39r159 39r188
+36b17 correcto{boolean} 40m33 46r24
+38i21 i{integer} 39r55 39r93 39r131 39r169 39r198
+49U19 Encontrar_Subcadenas 49b19 49>41 49=91 49>129 74l13 74t33 119s9
+49r41 secuencia{12|87R9} 52r36 54r102 56r41 57r102 59r41 60r102 62r41 63r102
+49a91 Subcadenas_Corta{14A14} 54m33 57m33 60m33 63m33
+49i129 RangoArray{integer} 53r37 56r55 59r55 62r55
+50i17 cont{integer}
+52i21 i{integer} 53r34 54r114 57r114 60r114 63r114
+53i29 k{integer} 54r50
+56i29 k{integer} 57r50
+59i29 k{integer} 60r50
+62i29 k{integer} 63r50
+77U12 Encontrar_Mayor_Coincidencia 77b12 77>42 77>96 90l6 90t34 125s17
+77r42 secuenciaLarga{12|87R9} 81r58
+77a96 Subcadenas_Corta{14A14} 80r26 81r100 83r183
+78i17 IndiceInicioCoincidencia{integer} 81m25 82r28 83r87 87r20
+80i13 i{integer} 81r117 83r200
+93r10 secuenciaADN1{12|87R9} 100m9 101r35 103m11 113m27 113r27 115r69 125r46
+94r17 secuenciaADN2{12|87R9} 106m9 107r35 109m11 113m42 113r42 114r69 119r30
+95r17 MayorSecuenciaEnComun{12|87R9}
+117a17 Subcadenas_Corta{14A14} 119m45 119r45 121r18 122r82 125r60
+121i13 i{integer} 122r49 122r99
+X 19 system.ads
 67M9*Address
-X 28 s-memory.ads
-53V13*Alloc{18|67M9} 103i<c,__gnat_malloc>22
+X 29 s-memory.ads
+53V13*Alloc{19|67M9} 103i<c,__gnat_malloc>22
 68U14*Free 104i<c,__gnat_free>22
-76V13*Realloc{18|67M9} 105i<c,__gnat_realloc>22
-X 34 s-stalib.adb
+76V13*Realloc{19|67M9} 105i<c,__gnat_realloc>22
+X 35 s-stalib.adb
 93U14 Break_Start 94i<c,__gnat_break_start>22
 

@@ -3,20 +3,20 @@ with Ada.Text_IO;         use Ada.Text_IO;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Characters.Handling; use Ada.Characters.Handling;
 with Ada.Strings.Maps; use Ada.Strings.Maps;
+with Ada.Strings.Fixed; use Ada.Strings.Fixed;
 
---PROBLEMAS POR CULPA DE EL RANGO DEL ARRAY, HAY QUE MIRAR COMO HACER QUE EL ARRAY SEA DINAMICO Y QUE NO HAGA FALTA DEFINIR SU RANGO. --> PATTERN ERROR--> Error debudo a que hay posiciones
---del array que al definir una longitud muy grande se quedan a "" y esto provoca el error de pattern, para arreglarlo, una vez definida la cadena, recortar los trozos en ""? (UNA OPCION)
+--ERROR YA QUE NO CONSIGO TODAS LAS SUBCADENAS DENTRO DE LA SECUENCIA DE ADN.--> AL CAMBIAR ESTO, TENDRE QUE MODIFICAR LA ULTIMA FUNCION QUE IDENTIFICA SI HAY COINCIDENCIAS
 
 procedure Main is
 
 	package StringIlimitado renames Ada.Strings.Unbounded; use type StringIlimitado.Unbounded_String;
 
 	--Variables y subprogramas
+	TamañoArray: Integer:=0; --Ponemos array de 1 a 10 por defecto
 	type Subcadenas is array (Integer range<>) of Ada.Strings.Unbounded.Unbounded_String; --Tipo de Array de tamaño variable que almacena strings de tamaño no definido
-	Subcadenas_Corta:Subcadenas(1..100);
 
 	--Subprogramas
-	procedure Identificar_Larga (Larga, Corta: in out StringIlimitado.Unbounded_String) is
+	procedure Identificar_Larga (Larga, Corta: in out StringIlimitado.Unbounded_String ; LongitudArray : in out Integer) is
 		--Funcion para identificar que secuencia de ADN es mas larga
 		aux : StringIlimitado.Unbounded_String;
 	begin
@@ -25,6 +25,12 @@ procedure Main is
 			Larga:=Corta;
 			Corta:=aux;
 		end if;
+		--Defino la longitud del array que almacena todas las subcadenas de la secuencia mas corta
+		for i in 1..Length(Corta) loop
+			LongitudArray:=LongitudArray+i;
+		end loop;
+		LongitudArray:= LongitudArray-1;
+		--Put_Line("El rango del array que almacena las subcadenas es de:"&Integer'Image(LongitudArray));
 	end Identificar_Larga;
 
 	function Comprobar_Secuencia (secuencia : StringIlimitado.Unbounded_String) return Boolean is
@@ -42,15 +48,35 @@ procedure Main is
 		return correcto;
 	end Comprobar_Secuencia;
 
-	procedure Encontrar_Subcadenas (secuencia : in StringIlimitado.Unbounded_String ; Subcadenas_Corta : in out Subcadenas)  is
+	procedure Encontrar_Subcadenas (secuencia : in StringIlimitado.Unbounded_String ; Subcadenas_Corta : in out Subcadenas; RangoArray : Integer)  is
+		cont : Integer:=2;
 	begin
-		Subcadenas_Corta(1):= Ada.Strings.Unbounded.To_Unbounded_String("")&(Element(secuencia,1));
-		for i in 2..Length(secuencia) loop
-			Subcadenas_Corta(i):=Subcadenas_Corta(i-1)&Element(secuencia,i);
+		for i in 1..Length(secuencia) loop
+			for k in i..RangoArray loop
+				Subcadenas_Corta(k):=Ada.Strings.Unbounded.To_Unbounded_String(Slice(secuencia,1,i));
+			end loop;
+			for k in Length(secuencia)+1..RangoArray loop
+				Subcadenas_Corta(k):=Ada.Strings.Unbounded.To_Unbounded_String(Slice(secuencia,2,i));
+			end loop;
+			for k in Length(secuencia)+2..RangoArray loop
+				Subcadenas_Corta(k):=Ada.Strings.Unbounded.To_Unbounded_String(Slice(secuencia,3,i));
+			end loop;
+			for k in Length(secuencia)+3..RangoArray loop
+				Subcadenas_Corta(k):=Ada.Strings.Unbounded.To_Unbounded_String(Slice(secuencia,4,i));
+			end loop;
+--FALTAN COMBINACIONES, DE AQUI HAY QUE COGER LA IDEA DE LOS SLICE, QUE PERMITE PARTIR EL STRING DE MANERA SENCILLA
 		end loop;
+
+
+
+
+
+
+
 	end Encontrar_Subcadenas;
 
- procedure Encontrar_Mayor_Coincidencia (secuenciaLarga: in StringIlimitado.Unbounded_String ; Subcadenas_Corta : in Subcadenas ) is
+
+ procedure Encontrar_Mayor_Coincidencia (secuenciaLarga: in StringIlimitado.Unbounded_String ; Subcadenas_Corta : in Subcadenas ) is --Tendre que modificarla porque el array de subcadenas ya o esta ordenado de mas largo a mas corto...
 		IndiceInicioCoincidencia: Integer:=0;
  begin
  	for i in reverse Subcadenas_Corta'Range loop --Evaluo desde la subcadena mas larga a la mas corta, si hay coincidencias, si no las hay el indice = 0
@@ -86,20 +112,18 @@ begin
 	end loop;
 
 	--Muestro las secuencias introducidas
-	Identificar_Larga(secuenciaADN1, secuenciaADN2);
+	Identificar_Larga(secuenciaADN1, secuenciaADN2, TamañoArray);
 	Put_Line("La secuencia corta es:"&StringIlimitado.To_String(secuenciaADN2));
 	Put_Line("LA secuencia larga es:"&StringIlimitado.To_String(secuenciaADN1));
-
-	--Busco subcadenas en la secuencia mas corta
-	Encontrar_Subcadenas(secuenciaADN2,Subcadenas_Corta);
+	declare
+		Subcadenas_Corta:Subcadenas(1..TamañoArray);
+	begin
+	Encontrar_Subcadenas(secuenciaADN2, Subcadenas_Corta, TamañoArray);
 	Put_Line("Las subcadenas encontradas en la secuencia de ADN mas corta son:");
-	for i in 1..Length(secuenciaADN2) loop
+	for i in Subcadenas_Corta'Range loop
 		Put_Line("Cadena"&Integer'Image(i)&":"&StringIlimitado.To_String(Subcadenas_Corta(i)));
 	end loop;
-
 	--Busco y Muestro la mayor coincidencia entre ambas secuencias de ADN
-  Encontrar_Mayor_Coincidencia(secuenciaADN1,Subcadenas_Corta);
-
-
-
+		Encontrar_Mayor_Coincidencia(secuenciaADN1,Subcadenas_Corta);
+	end;
 end Main;
