@@ -8,8 +8,14 @@ El objetivo de esta tarea es que vayámos cogiendo soltura programando, y para es
 
 # EXPLICACIÓN
 
+Para la resolución de esta tarea se han seguido los enunciados expuestos anteriormente.
 
 # CÓDIGO
 
+El problema se ha resuelto usando ADA 2005 y el GNAT Studio sobre Windows
 
-# POSIBLES MEJORAS
+La soluciones se encuentran en las carpetas "Biologo", "Invertir Palabras" y "Palíndromos" dentro de la carpeta "tarea_38". Estas carpetas estan compuestas por un achivo "nombre.adb" y un ejecutable de Windows "nombre.exe".
+
+Referente a la forma de uso, simplemente hay que descargar el ejecutable "nombre.exe" asociado al ejercicio a evaluar y probar su funcionamiento. Otra opción puede ser descargar el IDE de programacion desde la propia web de AdaCore [Enlace](https://www.adacore.com/download)
+
+# DIAGRAMAS DE FLUJO
