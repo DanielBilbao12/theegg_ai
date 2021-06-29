@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <Locations >
-  <Project>
-    <vfs_file>C:\Users\USUARIO\source\repos\DanielBilbao12\theegg_ai\tarea_38\Biologo\biologo_theegg.gpr</vfs_file>
+  <Project >
     <file_marker column=" 1" line=" 1" >
       <vfs_project />
       <vfs_file>C:\GNAT\2020\bin\src\main.adb</vfs_file>
@@ -22,9 +21,13 @@
       <vfs_project />
       <vfs_file>D:\USUARIO\Desktop\UNI\MASTER\1\SistemasEmpotradosDeControl\Labo\Practicas\Ejemplo_TipoTarea_Acces\MisTareas.ads</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 1" line=" 1" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project />
       <vfs_file>D:\USUARIO\Desktop\UNI\MASTER\1\SistemasEmpotradosDeControl\Labo\Practicas\Ejemplo_TipoTarea_Acces\main.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 22" line=" 15" >
+      <vfs_project>C:\Users\USUARIO\source\repos\DanielBilbao12\theegg_ai\tarea_38\Biologo\biologo_theegg.gpr</vfs_project>
+      <vfs_file>C:\Users\USUARIO\source\repos\DanielBilbao12\theegg_ai\tarea_38\Biologo\src\main.adb</vfs_file>
     </file_marker>
   </Project>
   <Project >
