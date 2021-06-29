@@ -19,7 +19,7 @@ RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_IMPLICIT_LOOPS
 
-U main%b		main.adb		85c9db6c NE OO SU
+U main%b		main.adb		70a1b619 NE OO SU
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
@@ -58,7 +58,7 @@ D a-textio.ads		20200819050644 aef4d56d ada.text_io%s
 D a-unccon.ads		20200819050644 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20200819050646 5ab55268 interfaces%s
 D i-cstrea.ads		20200819050646 e53d8b8e interfaces.c_streams%s
-D main.adb		20210625164020 4507163e main%b
+D main.adb		20210629210900 b06f7b4b main%b
 D system.ads		20200819050648 32a08138 system%s
 D s-atocou.ads		20200819050646 b45c2d8d system.atomic_counters%s
 D s-conca2.ads		20200819050646 02a0d7d0 system.concat_2%s
@@ -86,72 +86,81 @@ D s-wchcon.ads		20200819050648 1b7d22d2 system.wch_con%s
 G a e
 G c Z b b [main standard 8 11 none]
 X 1 ada.ads
-16K9*Ada 20e8 18|2r6 2r31 3r6 3r33 4r6 4r35 5r6 5r28 6r6 6r29 10r41 14r55
-. 54r54 57r54 60r54 63r54
+16K9*Ada 20e8 18|2r6 2r35 3r6 3r35 4r6 4r35 5r6 5r35 6r6 6r35 10r36 15r51
+. 55r42 58r72
 X 2 a-charac.ads
 16K13*Characters 18e19 18|4r10 4r39
 X 3 a-chahan.ads
 36K24*Handling 159e28 18|4w21 4r50
-67V13*To_Upper{character} 18|39s28 39s66 39s104 39s142
+67V13*To_Upper{character} 18|38s13 38s56 38s99 38s142
 X 9 a-string.ads
-16K13*Strings 35e16 18|3r10 3r37 5r10 5r32 6r10 6r33 10r45 14r59 54r58 57r58
-. 60r58 63r58
+16K13*Strings 35e16 18|3r10 3r39 5r10 5r39 6r10 6r39 10r40 15r55 55r46 58r76
+33n30*Right{33E9} 18|58r84
 X 10 a-strfix.ads
-43K21*Fixed 596e22 18|6w18 6r41
+43K21*Fixed 596e22 18|6w18 6r47
 X 11 a-strmap.ads
-38K21*Maps 411e21 18|5w18 5r40
+38K21*Maps 411e21 18|5w18 5r47
 X 12 a-strunb.ads
-82K21*Unbounded 758e26 18|3w18 3r45 10r53 14r67 54r66 57r66 60r66 63r66
-87R9*Unbounded_String<6|43R9> 741e14 18|10r89 14r77 17r75 19r39 34r67 49r72
-. 77r77 93r42 94r49 95r57
-92V13*Length{natural} 18|21s20 21s36 27s29 38s29 52s29 56s34 59s34 62s34
-103V13*To_Unbounded_String{87R9} 18|54s76 57s76 60s76 63s76 100s41 103s43
-. 106s41 109s43
-116V13*To_String{string} 18|81s90 83s173 114s59 115s59 122s72
-191V13*Element{character} 18|39s37 39s75 39s113 39s151 39s180
-207V13*Slice{string} 18|54s96 57s96 60s96 63s96
-332V13*Index{natural} 18|81s52
+82K21*Unbounded 758e26 18|3w18 3r47 10r48 15r63 55r54
+87R9*Unbounded_String<6|43R9> 741e14 18|11r29 15r73 18r71 20r29 33r62 48r67
+. 49r46 63r138 64r29 79r82 110r44 111r44
+92V13*Length{natural} 18|22s10 22s27 28s21 37s21 53s13 54s27 66s13 66s55
+. 70s16 70s48
+103V13*To_Unbounded_String{87R9} 18|55s64 118s37 121s40 124s37 127s40
+116V13*To_String{string} 18|83s76 89s32 104s29 133s50 135s50
+191V13*Element{character} 18|38s23 38s66 38s109 38s152 38s185
+207V13*Slice{string} 18|55s85
+332V13*Index{natural} 18|83s38
+581V13*Delete{87R9} 18|58s43
+607V13*Trim{87R9} 18|58s37
 X 14 a-textio.ads
-57K13*Text_IO 727e16 18|2w10 2r35
-495V13*Get_Line{string} 18|100s61 103s63 106s61 109s63
-508U14*Put_Line 18|42s33 83s33 88s25 99s9 102s25 105s9 108s25 114s9 115s9
-. 120s9 122s17
+57K13*Text_IO 727e16 18|2w10 2r39
+495V13*Get_Line{string} 18|118s58 121s61 124s58 127s61
+508U14*Put_Line 18|41s13 85s13 94s10 100s7 102s10 117s4 120s7 123s4 126s7
+. 132s4 134s4
 X 18 main.adb
-8U11*Main 8b11 127l5 127t9
-10K17 StringIlimitado=10:53 10r73 17r59 19r23 34r51 49r56 77r61 81r74 83r157
-. 93r26 94r33 95r41 100r25 103r27 106r25 109r27 114r43 115r43 122r56
-13i9 TamañoArray{integer} 113m57 113r57 117r48 119r63
-14A14 Subcadenas(12|87R9)<integer> 49r117 77r118 117r34
-17U19 Identificar_Larga 17b19 17=38 17=45 17=94 32l13 32t30 113s9
-17r38 Larga{12|87R9} 21r27 22r30 23m25
-17r45 Corta{12|87R9} 21r43 23r32 24m25 27r36
-17i94 LongitudArray{integer} 28m25 28r40 30m17 30r33
-19r17 aux{12|87R9} 22m25 24r32
-27i21 i{integer} 28r54
-34V18 Comprobar_Secuencia{boolean} 34b18 34>39 47l13 47t32 101s15 107s15
-34r39 secuencia{12|87R9} 38r36 39r45 39r83 39r121 39r159 39r188
-36b17 correcto{boolean} 40m33 46r24
-38i21 i{integer} 39r55 39r93 39r131 39r169 39r198
-49U19 Encontrar_Subcadenas 49b19 49>41 49=91 49>129 74l13 74t33 119s9
-49r41 secuencia{12|87R9} 52r36 54r102 56r41 57r102 59r41 60r102 62r41 63r102
-49a91 Subcadenas_Corta{14A14} 54m33 57m33 60m33 63m33
-49i129 RangoArray{integer} 53r37 56r55 59r55 62r55
-50i17 cont{integer}
-52i21 i{integer} 53r34 54r114 57r114 60r114 63r114
-53i29 k{integer} 54r50
-56i29 k{integer} 57r50
-59i29 k{integer} 60r50
-62i29 k{integer} 63r50
-77U12 Encontrar_Mayor_Coincidencia 77b12 77>42 77>96 90l6 90t34 125s17
-77r42 secuenciaLarga{12|87R9} 81r58
-77a96 Subcadenas_Corta{14A14} 80r26 81r100 83r183
-78i17 IndiceInicioCoincidencia{integer} 81m25 82r28 83r87 87r20
-80i13 i{integer} 81r117 83r200
-93r10 secuenciaADN1{12|87R9} 100m9 101r35 103m11 113m27 113r27 115r69 125r46
-94r17 secuenciaADN2{12|87R9} 106m9 107r35 109m11 113m42 113r42 114r69 119r30
-95r17 MayorSecuenciaEnComun{12|87R9}
-117a17 Subcadenas_Corta{14A14} 119m45 119r45 121r18 122r82 125r60
-121i13 i{integer} 122r49 122r99
+8U11*Main 8b11 146l5 146t9
+10K12 StringIlimitado=10:48 11r13 18r55 20r13 33r46 48r51 49r30 63r122 64r13
+. 79r66 83r60 89r16 104r13 110r28 111r28 118r21 121r24 124r21 127r24 133r34
+. 135r34
+14i4 TamañoArray{integer} 131m53 131r53 137r43 139r62 140r51
+15A9 Subcadenas(12|87R9)<integer> 48r111 63r66 79r122 98r45 137r26
+18U14 Identificar_Larga 18b14 18=33 18=40 18=89 31l8 31t25 131s4
+18r33 Larga{12|87R9} 22r18 23r19 24m10
+18r40 Corta{12|87R9} 22r35 24r19 25m10 28r29
+18i89 LongitudArray{integer} 29m10 29r27
+20r7 aux{12|87R9} 23m10 25r19
+28i11 i{integer} 29r43
+33V13 Comprobar_Secuencia{boolean} 33b13 33>34 46l8 46t27 119s10 125s10
+33r34 secuencia{12|87R9} 37r29 38r32 38r75 38r118 38r161 38r194
+35b7 correcto{boolean} 39m13 45r14
+37i11 i{integer} 38r43 38r86 38r129 38r172 38r205
+48U14 Encontrar_Subcadenas 48b14 48>36 48=85 48>123 61l8 61t28 139s7
+48r36 secuencia{12|87R9} 49r66 58r51
+48a85 Subcadenas_Corta{15A9} 55m16
+48i123 RangoArray{integer} 52r24
+49r7 SecuenciaActualizada{12|87R9} 53r21 54r35 55r92 58m13
+50i7 aux{integer} 55r34 56m16 56r23
+52i11 cont{integer} 58r65
+54i17 i{integer} 55r117
+63U14 Ordenar_Lista_Subcadenas 63b14 63=40 63>78 63>100 77l8 77t32 140s7
+63a40 Subcadenas_Corta{15A9} 66r21 70r24 70r56 71r44 72m16 72r44 73m16
+63i78 RangoArray{integer} 66r39 68r32
+63r100 secuencia_corta{12|87R9} 66r63
+64r7 aux{12|87R9} 71m16 73r44
+68i14 i{integer} 69r23 70r42 70r74 71r62 72r34 72r62 73r34
+79U14 Encontrar_Mayor_Coincidencia 79b14 79>44 79>100 96l8 96t36 144s7
+79r44 secuenciaLarga{12|87R9} 83r44
+79a100 Subcadenas_Corta{15A9} 82r24 83r87 89r43
+80i7 IndiceInicioCoincidencia{integer} 83m10 84r13 87r31 93r10
+82i11 i{integer} 83r105 89r61
+98U14 Mostrar_Subcadenas 98b14 98>34 107l15 107t33
+98a34 Lista{15A9} 101r16 104r40
+101i11 i{integer} 103r39 104r47
+110r4 secuenciaADN1{12|87R9} 118m4 119r31 121m7 131m23 131r23 135r61 144r37
+111r4 secuenciaADN2{12|87R9} 124m4 125r31 127m7 131m38 131r38 133r61 139r29
+. 140r64
+137a7 Subcadenas_Corta{15A9} 139m44 139r44 140m33 140r33 144r52
 X 19 system.ads
 67M9*Address
 X 29 s-memory.ads
