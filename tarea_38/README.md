@@ -19,3 +19,5 @@ La soluciones se encuentran en las carpetas "Biologo", "Invertir Palabras" y "Pa
 Referente a la forma de uso, simplemente hay que descargar el ejecutable "nombre.exe" asociado al ejercicio a evaluar y probar su funcionamiento. Otra opción puede ser descargar el IDE de programacion desde la propia web de AdaCore [Enlace](https://www.adacore.com/download) y probar la solución propuesta en "nombre.adb""
 
 # DIAGRAMAS DE FLUJO
+
+Los diagramas de flujo asociados a cada uno de los ejercicios a realizar se encuentran dentro de la carpeta de cada ejercicio, en formato PDF.
