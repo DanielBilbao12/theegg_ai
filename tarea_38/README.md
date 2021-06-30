@@ -10,11 +10,12 @@ El objetivo de esta tarea es que vayámos cogiendo soltura programando, y para es
 
 Para la resolución de esta tarea se han seguido los enunciados expuestos anteriormente.
 
+
 # CÓDIGO
 
 El problema se ha resuelto usando ADA 2005 y el GNAT Studio sobre Windows
 
-Se ha utlizado ADA como lenguaje para la resolución de este problema ya que es el lenguaje que he estado utilizando para la implementacion de sistemas empotrados en tiempo real y me ha parecido util darlo a conocer a la comnunidad. 
+Se ha utlizado ADA como lenguaje para la resolución de este problema ya que es el lenguaje que he estado utilizando para la implementacion de sistemas empotrados en tiempo real y me ha parecido util darlo a conocer a la comunidad. 
 A diferencia de otros lenguajes de programacion de alto nivel como pueden ser Pascal, Fortran, C, C++... que necesitan de un SO para implementar concurrencia y tiempo real, ADA es un lenguaje concurrente que incluye mecanismos para la implementacion de concurrencia y tiempo real.
 
 La soluciones se encuentran en las carpetas "Biologo", "Invertir Palabras" y "Palíndromos" dentro de la carpeta "tarea_38". Estas carpetas estan compuestas por un achivo "nombre.adb" y un ejecutable de Windows "nombre.exe".
