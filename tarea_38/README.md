@@ -21,3 +21,5 @@ Referente a la forma de uso, simplemente hay que descargar el ejecutable "nombre
 # DIAGRAMAS DE FLUJO
 
 Los diagramas de flujo asociados a cada uno de los ejercicios a realizar se encuentran dentro de la carpeta de cada ejercicio, en formato PDF.
+
+Cabe destacar que estos diagramas indican el funcionamiento del programa realizado sin entrar a las funciones que se utilizan. Estas se pueden analizar en el propio codigo.
