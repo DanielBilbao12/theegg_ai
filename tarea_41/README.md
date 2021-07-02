@@ -46,4 +46,4 @@ Nota: Dejo el enlace del programa en "Google Colab" para poder ejecutar el códig
 
 # POSIBLES MEJORAS
 Como posibles mejoras se me ocurre calcular el porcentaje de aparicion de cada palabra en funcion del numero de palabras totales del texto.
-Además, a la hora de visualizar la lista ordenada, se podrian quitarlos corchetes que encapsulan la clave-valor de cada elemento del diccionario.
+Además, a la hora de visualizar la lista ordenada, se podrian quitar los corchetes que encapsulan la clave-valor de cada elemento del diccionario.
