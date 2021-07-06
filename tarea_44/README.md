@@ -16,6 +16,7 @@ De esta manera, tras realizar varias pruebas con diferentes rangos de valores a 
   <img src="https://raw.githubusercontent.com/DanielBilbao12/theegg_ai/master/tarea_44/NotacionAsintotica_AmbasFunciones.JPG" alt="Comparacion de la complejidad de ambos algoritmos"/>
 </p>
 Como se puede apreciar, la funcion que utiliza la formula de Gauss tiene una complejidad constante (mismo numero de operaciones a realizar independientemente del numero de datos de entrada) mientras que la funcion que realiza la suma lineal, aumenta el numero de operaciones a realiza a medida que aumentan el numero de datos de entrada
+
 # CÓDIGO
 
 El problema se ha resuelto usando Python 3.7 y el IDE Visual Studio 2019.
