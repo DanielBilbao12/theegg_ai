@@ -15,4 +15,9 @@ En cuanto a la forma de uso, simplemente hay que ejecutar el programa y visualiz
 Nota: Dejo el enlace del programa en "Google Colab" para poder ejecutar el código en linea.
 ()
 
+# REFERENCIAS
+
+https://uniwebsidad.com/libros/algoritmos-python/capitulo-8/busqueda-binaria
+
+
 # POSIBLES MEJORAS
