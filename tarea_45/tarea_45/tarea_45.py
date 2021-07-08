@@ -52,7 +52,7 @@ def BuscarNumero_Secuencial(numero, Lista):
             print("     -El algoritmo de busqueda secuencial ha tardado: %0.5f" %(time()-t0)+" segundos")
             break #Salgo del FOR
     if iteraciones==len(Lista):
-        print("No se ha encontrado el numero deseado en la lista")
+        print("No se ha encontrado el numero "+str(numero)+" en la lista mediante la busqueda secuencial")
 
 
 def BuscarNumero_Binaria(numero, lista):
@@ -81,7 +81,7 @@ def BuscarNumero_Binaria(numero, lista):
         else:
             izq = medio+1
     if lista[medio]!=numero: #Condicion para saber si el numero estaba en la lista o no
-        print("No se ha encontrado el numero deseado en la lista")
+        print("No se ha encontrado el numero "+str(numero)+" en la lista mediante la busqueda binaria")
 
 
 def main():
