@@ -1,12 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\tarea_33",
     "\\tarea_41",
     "\\tarea_41\\Tarea_41",
-    "\\tarea_45",
+    "\\tarea_44",
+    "\\tarea_44\\tarea_44",
     "\\tarea_45\\tarea_45"
   ],
-  "SelectedNode": "\\tarea_45\\README.md",
+  "SelectedNode": "\\tarea_44\\tarea_44\\tarea_44.py",
   "PreviewInSolutionExplorer": false
 }
