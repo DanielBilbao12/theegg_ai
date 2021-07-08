@@ -51,7 +51,7 @@ def BuscarNumero_Secuencial(numero, Lista):
             print("     -El numero "+str(numero)+" se encuentra en la posicion: "+str(i+1))
             print("     -El algoritmo de busqueda secuencial ha tardado: %0.5f" %(time()-t0)+" segundos")
             break #Salgo del FOR
-    if iteraciones==len(Lista):
+    if Lista[iteraciones-1]!=numero:
         print("No se ha encontrado el numero "+str(numero)+" en la lista mediante la busqueda secuencial")
 
 
