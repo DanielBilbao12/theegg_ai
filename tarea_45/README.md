@@ -8,8 +8,24 @@ Se tiene la siguiente lista de elementos:  [3, 56, 21, 33, 874, 123, 66, 1000, 2
 
 -Realizar el analisis en notacion Big-O
 
-# EXPLICACIÓN
+# EXPLICACIÓN Y ANALISIS BIG-O
 
+Para la resolucion del ejercicio:
+
+-Se ha aplicado recursividad para crear el algoritmo de ordenacion de menor a mayor.
+
+-En cuanto a la busqueda de forma secuencial y forma binaria, se han seguido los respectivos pasos para cada caso.
+
+Obteniendo el siguiente resultado de ejecucion del programa:
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DanielBilbao12/theegg_ai/master/tarea_45/ResultadoEjecucion.JPG" alt="Resultado de la ejecucion del programa"/>
+</p>
+
+Como se puede observar, el algoritmo de busqueda secuencial necesita mas iteraciones que el algoritmo binario, necesitando mas tiempo para encontrar el numero deseado en la lista.
+
+
+En cuanto al analisis BIG-O..
 
 # CÓDIGO
 
@@ -25,7 +41,9 @@ Nota: Dejo el enlace del programa en "Google Colab" para poder ejecutar el códig
 
 Cabe destacar, que para la resolucion de este ejercicio se han seguido varias referencias de interes:
 
-	- Enlace sobre el algoritmo de busqueda binaria: [Enlace](https://uniwebsidad.com/libros/algoritmos-python/capitulo-8/busqueda-binaria)
+	- Enlace sobre el algoritmo de busqueda binaria: https://uniwebsidad.com/libros/algoritmos-python/capitulo-8/busqueda-binaria
 
 
 # POSIBLES MEJORAS
+
+Como posibles mejoras, se podria pedir al usuario que introduzca una lista para posteriormente ordenarla y, encontrar el numero que el usuario quiera mediante ambos algoritmos de busqueda.
