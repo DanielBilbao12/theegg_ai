@@ -2,19 +2,19 @@
 
 Se tiene la siguiente lista de elementos:  [3, 56, 21, 33, 874, 123, 66, 1000, 23, 45, 65, 56]. Se pide:
 
--Construir un algoritmo para ordenarlo de menor a mayor
+- Construir un algoritmo para ordenarlo de menor a mayor
 
--Buscar el numero 874 mediante el uso de el algoritmo de busqueda secuencial y mediante el algoritmo de busqueda binario. Además, se debe sumar 1 en cada iteracion de modo que al final del programa se indique el numero de iteraciones realizadas por cada algoritmo de busqueda.
+- Buscar el numero 874 mediante el uso de el algoritmo de busqueda secuencial y mediante el algoritmo de busqueda binario. Además, se debe sumar 1 en cada iteracion de modo que al final del programa se indique el numero de iteraciones realizadas por cada algoritmo de busqueda.
 
--Realizar el analisis en notacion Big-O
+- Realizar el analisis en notacion Big-O
 
-# EXPLICACIÓN Y ANALISIS BIG-O
+# EXPLICACIÓN
 
 Para la resolucion del ejercicio:
 
--Se ha aplicado recursividad para crear el algoritmo de ordenacion de menor a mayor.
+- Se ha aplicado recursividad para crear el algoritmo de ordenacion de menor a mayor.
 
--En cuanto a la busqueda de forma secuencial y forma binaria, se han seguido los respectivos pasos para cada caso.
+- En cuanto a la busqueda de forma secuencial y forma binaria, se han seguido los respectivos pasos para cada caso.
 
 Obteniendo el siguiente resultado de ejecucion del programa:
 
@@ -24,8 +24,30 @@ Obteniendo el siguiente resultado de ejecucion del programa:
 
 Como se puede observar, el algoritmo de busqueda secuencial necesita mas iteraciones que el algoritmo binario, necesitando mas tiempo para encontrar el numero deseado en la lista.
 
+# ANALISIS BIG-O
 
-En cuanto al analisis BIG-O..
+En cuanto al analisis BIG-O, mediante esta notacion se consigue valorar y comparar la eficiencia de los algoritmos desarrollados para buscar un objeto en una lista.
+
+De esta manera, se han construido 100 listas de numeros enteros. Estas listas son de tamaño variable entre 100 y 500. Asi, se han realizado tres tipos de busquedas:
+
+- Busqueda del numero en la primera posicion de la lista:
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DanielBilbao12/theegg_ai/master/tarea_45/Grafico_bigO_0.png" alt="Analisis Big-O"/>
+</p>
+
+- Busqueda del numero en la mitad de la lista:
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DanielBilbao12/theegg_ai/master/tarea_45/Grafico_bigO_0.5.png" alt="Analisis Big-O"/>
+</p>
+
+- Busqueda del numero en la mitad superior de la lista:
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DanielBilbao12/theegg_ai/master/tarea_45/Grafico_bigO_0.8.png" alt="Analisis Big-O"/>
+</p>
+
+Como se puede apreciar, la complejidad del algoritmo secuencial es lineal, en notacion asintotica: O(n). Además, cabe destacar que en funcion de la posicion del numero a buscar su rendimiento es superior al algoritmo de busqueda binario (en los casos en los que la posicion del numero a buscar es al principio de la lista)
+
+Por otro lado, cuando la posicion del numero a buscar se aleja del principio de la lista y crece el tamaño de la misma, el algoritmo de busqueda binario es mas eficiente que el algoritmo de busqueda secuencial. Concluyendo asi que la complejidad del algoritmo de busqueda binario en notacion asintotica es: O(log2(n))
 
 # CÓDIGO
 
@@ -42,6 +64,8 @@ Nota: Dejo el enlace del programa en "Google Colab" para poder ejecutar el códig
 Cabe destacar, que para la resolucion de este ejercicio se han seguido varias referencias de interes:
 
 	- Enlace sobre el algoritmo de busqueda binaria: https://uniwebsidad.com/libros/algoritmos-python/capitulo-8/busqueda-binaria
+	- Repositorio de uno de los compañeros de la escuela (Igor Irastorza):https://github.com/IgorIrastorza/theegg_ai/tree/master/tarea_45
+	  La idea de plotear los resultado tras el analisis Big-O la he cogido tras la correcion de la tarea de Igor Irastorza
 
 
 # POSIBLES MEJORAS
