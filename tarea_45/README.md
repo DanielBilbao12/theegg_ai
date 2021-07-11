@@ -60,7 +60,8 @@ La solucion se encuentra en el fichero "tarea_45.py" dentro de la carpeta "tarea
 
 En cuanto a la forma de uso, simplemente hay que ejecutar el programa y visualizar los resultados obtenidos.
 
-Nota: Dejo el enlace del programa en "Google Colab" para poder ejecutar el código en linea.[Enlace](https://colab.research.google.com/drive/1-jvkyllgkC0_gMoBf0rF65c5UcnAwJsl?usp=sharing)
+Nota: Dejo el enlace del programa en "Google Colab" para poder ejecutar el código en linea.[Enlace](https://colab.research.google.com/drive/1-jvkyllgkC0_gMoBf0rF65c5UcnAwJsl?usp=sharing). Además, cabe destacar que no se añade la parte de codigo para en analisis Big-O. En caso de querer probarlo, solo habira que copiar el archivo "tarea_45.py" y volver a ejecutar.
+
 
 # REFERENCIAS
 
