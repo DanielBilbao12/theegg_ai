@@ -31,16 +31,19 @@ En cuanto al analisis BIG-O, mediante esta notacion se consigue valorar y compar
 De esta manera, se han construido 100 listas de numeros enteros. Estas listas son de tamaño variable entre 100 y 500. Asi, se han realizado tres tipos de busquedas:
 
 - Busqueda del numero en la primera posicion de la lista:
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/DanielBilbao12/theegg_ai/master/tarea_45/Grafico_bigO_0.png" alt="Analisis Big-O"/>
 </p>
 
 - Busqueda del numero en la mitad de la lista:
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/DanielBilbao12/theegg_ai/master/tarea_45/Grafico_bigO_0.5.png" alt="Analisis Big-O"/>
 </p>
 
 - Busqueda del numero en la mitad superior de la lista:
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/DanielBilbao12/theegg_ai/master/tarea_45/Grafico_bigO_0.8.png" alt="Analisis Big-O"/>
 </p>
