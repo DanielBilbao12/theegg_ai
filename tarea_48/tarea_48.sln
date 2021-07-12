@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "tarea_48", "tarea_48\tarea_48.pyproj", "{424F79A6-BFE8-45BD-8D10-EE5011714627}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{424F79A6-BFE8-45BD-8D10-EE5011714627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{424F79A6-BFE8-45BD-8D10-EE5011714627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40A87E5E-FD69-41E6-A53E-56F6DBA10A30}
+	EndGlobalSection
+EndGlobal
