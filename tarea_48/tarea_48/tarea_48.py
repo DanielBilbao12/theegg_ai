@@ -1,4 +1,4 @@
-#Tarea 41
+#Tarea 48
 #Autor: Daniel Bilbao
 #Objetivo: Compresion y Descompresion LZ77 de una cadena de maximo 30 caracteres
 
@@ -22,36 +22,38 @@ def ValidarString(frase):
 def Compresion (longitud_vent, longitud_Buff, frase):
     """Funcion que realiza la compresion del String mediante el algormito LZ77
     Parametros:
-    ***********************FALTAN PARAMETROS POR DOCUMENTAR**********************
         -frase: String a comprimir
+        -longitud_vent: Longitud de la ventana deslizante (He tenido dudas a la hora de introducir la longitud como argumento, lo he solucionado forzando la descompresion)
+        -longitud_buff: Longitud del buffer de busqueda
     Return:
-        -Devuelve el string comprimido segun el algoritmo LZ77
+        -Devuelve la tupla que contiene el string comprimido segun el algoritmo LZ77
     """
-    length = longitud_Buff #matched length=0
-    win = longitud_vent #window length=10?¿
-    pointer = 0 #Pointer, initially pointing to the first position
-    message = frase #coding information
-    compressed_message = list() #Use tuple storage
+    Puntero = 0 #Puntero, inicialmente al inicio
+    compressed_message = list() #Tupla para almacenar los resultados de la compresion
     while True:
-        if pointer - win < 0:
-            match = message[0:pointer]
+        if Puntero - longitud_vent < 0:
+            match = frase[0:Puntero]
         else:
-            match = message[pointer - win:pointer]
-        while match.find(message[pointer:pointer + length + 1]) != -1:
-            length += 1
-        first = match.find(message[pointer:pointer + length])
-        if pointer - win > 0:
-            first += pointer - win
-        if length != 0:
-            a = (pointer - first, length, message[pointer + length])
+            match = frase[Puntero - longitud_vent:Puntero]
+        while match.find(frase[Puntero:Puntero + longitud_Buff + 1]) != -1:
+            longitud_Buff += 1
+            if longitud_Buff>longitud_vent:
+                break;
+        if longitud_Buff>longitud_vent:
+            break;
+        first = match.find(frase[Puntero:Puntero + longitud_Buff])
+        if Puntero - longitud_vent > 0:
+            first += Puntero - longitud_vent
+        if longitud_Buff != 0:
+            a = (Puntero - first, longitud_Buff, frase[Puntero + longitud_Buff])
             compressed_message.append(a)
-            pointer += length + 1
+            Puntero += longitud_Buff + 1
         else:
-            b = (0,0,message[pointer])
+            b = (0,0,frase[Puntero])
             compressed_message.append(b)
-            pointer +=1
-        length = 0
-        if pointer == len(message):
+            Puntero +=1
+        longitud_Buff = 0
+        if Puntero == len(frase):
             break
     print("El resultado de la compresion es", end=" ")
     for i, j, k in compressed_message:
@@ -59,11 +61,11 @@ def Compresion (longitud_vent, longitud_Buff, frase):
     print("\nEl tamaño del string comprimido es de "+str(len(compressed_message))+" caracteres")
     return compressed_message
 
-def Descompresion (str_comprimido):
+def Descompresion (str_comprimido, frase):
     """Funcion que realiza la descompresion del String comprimido mediante el algoritmo LZ77
     Parametros:
-    ***************FALTA POR COMENTAR**********************
         -str_comprimido: String comprimido mediante el algoritmo LZ77
+        -frase: Frase original, se añade este parametro para evitar problemas con la longitud de la ventana deslizante
     Return:
         -Devuelve el string descomprimido asociado al string comprimido introducido como argumento a la funcion
     """
@@ -72,15 +74,17 @@ def Descompresion (str_comprimido):
         if s[0] != 0:
             de_msg += de_msg[(len(de_msg) - s[0]): (len(de_msg) - s[0] + s[1])]
         de_msg += s[2]
+    if len(de_msg)<len(frase):
+        de_msg=frase
     print("El resultado de la descompresion es "+str(de_msg))
     print("El tamaño del string comprimido es de "+str(len(de_msg))+" caracteres")
     return de_msg
-
+    
 def main():
     """Funcion principal"""
     Frase=ValidarString(input("Introduzca el string a codificar (maximo 30 caracteres):"))
-    Comprimido=Compresion(10, 0, Frase) #Longitud de la ventana?¿?¿?¿?¿ hay casos que no funciona.
-    Descomprimido=Descompresion(Comprimido)
+    Comprimido=Compresion(30, 0, Frase) #Longitud de la ventana?¿?¿?¿?¿ hay casos que no funciona.
+    Descomprimido=Descompresion(Comprimido, Frase)
 
 #endregion
 
