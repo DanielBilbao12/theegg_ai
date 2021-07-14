@@ -26,7 +26,7 @@ Con la validacion del input realizada, se han desarrollado las funciones encarga
 Obteniendo el siguiente resultado de ejecucion del programa:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/DanielBilbao12/theegg_ai/master/tarea_45/ResultadoEjecucion.JPG" alt="Resultado de la ejecucion del programa"/>
+  <img src="https://raw.githubusercontent.com/DanielBilbao12/theegg_ai/master/tarea_48/ResultadoEjecucion.JPG" alt="Resultado de la ejecucion del programa"/>
 </p>
 
 # CÓDIGO
