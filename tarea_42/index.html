@@ -16,11 +16,11 @@
         al que se genera con la etiqueta 'p')
         <hr />
         <h1>CONTENIDO MULTIMEDIA</h1>
-        <ol>
+        <ul>
             <li>
                 <a href="enlaces.html">Pagina enlaces</a>
             </li>
-        </ol>
+        </ul>
         <hr />
         <h1>LISTAS</h1>
         A continuacion se crea una lista desordenada <br />
@@ -40,6 +40,53 @@
         Ahora insertaremos imagenes en nuestra pagina:
         <br />
         <img width="150" alt="Texto alternativo en caso de que no se cargue la imagen" src="img/Gato_Siames.jpg" height="200" />
+        <hr />
+        <h1>TABLAS</h1>
 
+        <table border="1">
+            <tr>
+                <td>Nombre</td>
+                <td>Apellidos</td>
+                <td>DNI</td>
+            </tr>
+            <tr>
+                <td>ALGOnombre</td>
+                <td>ALGOapellido</td>
+                <td>ALGOdni</td>
+            </tr>
+            <tr>
+                <td>ALGO</td>
+                <td>ALGO</td>
+                <td>ALGO</td>
+            </tr>
+            <tr>
+                <td>ALGO</td>
+                <td>ALGO</td>
+                <td>ALGO</td>
+            </tr>
+        </table>
+        <hr />
+        <h1>FORMULARIOS</h1>
+        <p>Formulario de contacto:</p>
+        <form>
+            <label>Nombre</label>
+            <input type="text" /> <br />
+
+            <label>DNI</label>
+            <input type="text" /> <br />
+
+            <label>Email</label>
+            <input type="email" /> <br />
+
+            <label>Sexo</label>
+            <select>
+                <option value="VariableHombre">Hombre</option>
+                <option value="VariableMujer">Mujer</option>
+            </select> <br />
+
+            <label>Pulse para enviar el formulario:</label>
+            <input type="submit" value="Enviar" />
+
+        </form>
     </body>
 </html>
