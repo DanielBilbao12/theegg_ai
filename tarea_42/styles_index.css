@@ -1,0 +1,79 @@
+body{
+    background-color:lightgreen;
+
+}
+.Logo {
+    float: right;
+    border: green 2px solid;
+}
+h1 {
+    color: green;
+    font-size: 20px;
+    font-family: Courier;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 30px;
+    letter-spacing: 5px;
+    text-decoration: underline;
+    text-transform:capitalize;
+    text-align: center;
+    text-indent:30px
+}
+h2{
+    color:darkorange;
+    font-style:normal;
+    text-decoration:solid;
+    text-indent:30px
+}
+h3 {
+    color: white;
+    font-size: 20px;
+    font-family:Arial;
+    font-weight: bold;
+    font-style:oblique;
+    line-height:15px;
+    letter-spacing: 1px;
+    text-decoration: underline;
+    text-transform: capitalize;
+    text-indent: 30px
+}
+p {
+    font-size: 1.2em;
+    color:black;
+    font-family: fantasy;
+    text-align: justify;
+    text-indent: 0px;
+    margin: 30px;
+}
+.TituloTarea {
+    font-size: 1em;
+    color: black;
+    font-family: fantasy;
+    text-align: justify;
+    margin: 30px;
+    margin-bottom:-10px;
+    margin-top:5px;
+   
+}
+hr {
+    height: 5px;
+    width: 100%;
+    background-color: black;
+}
+.Apartados {
+    color: black;
+    list-style-type: upper-alpha;
+    margin: 20px;
+    margin-top: 15px;
+    font-family: Centaur;
+    grid-area: initial;
+    font-weight: bold;
+}
+.Enlaces {
+    color: blue;
+    margin: 5px;
+    grid-area: initial;
+    font-weight: bold;
+    margin-top:-15px;
+    margin-bottom:10px;
+}
