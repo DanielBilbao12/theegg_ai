@@ -32,12 +32,13 @@ function iniciar(event) {
     //En primer lugar almaceno el reconocimiento en una variable y la printeo en consola para comprobar
     var texto = document.getElementById("TextoReconocido").innerText;
     console.log("EL TEXTO RECONOCIDO ES: " + texto);
-    //Evaluo si coincide con la orden de PLAY
+    //Evaluo si coincide con las ordenes--> ANTES DE CONTROLAR EL VIDEO POR VOZ, HACE FALTA INICIARLO UNA VEZ MANUALMENTE
     if (texto == "reproducir")
         Video.play();
-    else
-        if (texto == "detener")
-            Video.pause();
+    if (texto == "detener")
+        Video.pause();
+    if (texto == "reiniciar")
+        Restart();
 
 }
 
