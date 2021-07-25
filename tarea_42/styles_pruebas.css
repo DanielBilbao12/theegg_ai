@@ -29,6 +29,49 @@ hr {
     background-color: black;
 }
 
+p {
+    font-size: 1.2em;
+    color: black;
+    font-family: fantasy;
+    text-align: justify;
+    text-indent: 0px;
+    margin: 30px;
+    margin-top:-10px;
+    margin-bottom:10px;
+}
+img {
+    float:left;
+    border: black 2px solid;
+    margin:30px;
+    margin-top:-20px;
+
+}
+
+table{
+    text-align:left;
+    margin:30px;
+    background-color:white;
+    width:80%;
+    border-collapse:collapse;
+    margin-top:10px;
+    border-color:green;
+}
+td{
+    text-align:center;
+}
+tr:hover{
+    background-color:forestgreen;
+    color:white;
+}
+.Titulos {
+    font-size: medium;
+    text-anchor: start;
+    font-weight: bold;
+    background-color:greenyellow;
+}
+.Titulos:hover{
+    background-color:black;
+}
 .Enlaces {
     color: blue;
     margin: 5px;
@@ -36,4 +79,44 @@ hr {
     font-weight: bold;
     margin-top: -15px;
     margin-bottom: 10px;
+}
+
+form {
+    margin: 30px;
+    margin-top: 10px;
+    background-color: white;
+    width: 300px;
+    border-radius: 3px;
+    border: 3px solid green;
+    padding: 10px 0px 0px 20px;
+}
+input{
+    outline:none;
+    margin-bottom:10px;
+}
+.Sexo {
+    margin-bottom: 10px;
+    margin-left:25px;
+}
+.Nombre{
+    margin-top:5px;
+}
+.DNI{
+    margin-left:37px;
+}
+.Email{
+    margin-left:16px;
+}
+.BotonEnviar{
+    color:forestgreen;
+    background-color:black
+}
+label {
+    color: black;
+    font-size: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 30px;
+    letter-spacing: 5px;
 }

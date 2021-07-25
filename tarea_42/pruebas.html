@@ -24,23 +24,23 @@
     </ul>
     <hr />
 
-    <h1>IMAGENES</h1>
-    Ahora insertaremos imagenes en nuestra pagina:
+    <h2>IMAGENES</h2>
+    <p>Ahora insertaremos imagenes en nuestra pagina:</p>
     <br />
     <img width="150" alt="Texto alternativo en caso de que no se cargue la imagen" src="img/Gato_Siames.jpg" height="200" />
     <hr />
-    <h1>TABLAS</h1>
 
+    <h2>TABLAS</h2>
     <table border="1">
-        <tr>
+        <tr class="Titulos">
             <td>Nombre</td>
             <td>Apellidos</td>
             <td>DNI</td>
         </tr>
         <tr>
-            <td>ALGOnombre</td>
-            <td>ALGOapellid o</td>
-            <td>ALGOdni</td>
+            <td>Daniel</td>
+            <td>Bilbao Moreno</td>
+            <td>88888888P</td>
         </tr>
         <tr>
             <td>ALGO</td>
@@ -54,27 +54,30 @@
         </tr>
     </table>
     <hr />
-    <h1>FORMULARIOS</h1>
+
+    <h2>FORMULARIOS</h2>
     <p>Formulario de contacto:</p>
-    <form>
-        <label>Nombre</label>
-        <input type="text" /> <br />
+    <form class="Formulario">
+        <label>Nombre:</label>
+        <input type="text" class="Nombre" id="Nombre" /> <br />
 
-        <label>DNI</label>
-        <input type="text" /> <br />
+        <label>DNI:</label>
+        <input type="text" class="DNI" id="DNI" /> <br />
 
-        <label>Email</label>
-        <input type="email" /> <br />
+        <label>Email:</label>
+        <input type="email" class="Email" id="Email" /> <br />
 
-        <label>Sexo</label>
-        <select>
-            <option value="VariableHombre">Hombre</option>
-            <option value="VariableMujer">Mujer</option>
+        <label>Sexo:</label>
+        <select class="Sexo">
+            <option value="VariableHombre" id="VariableSexo">Hombre</option>
+            <option value="VariableMujer" id="VariableSexo">Mujer</option>
         </select> <br />
 
-        <label>Pulse para enviar el formulario:</label>
-        <input type="submit" value="Enviar" />
+        <label>Enviar el formulario:</label>
+        <input type="submit" value="Enviar" id="Boton" class="BotonEnviar" onclick="ObtenerInfo()" />
 
     </form>
+
+    <script type="text/javascript" src="Formulario.js"></script>
 </body>
 </html>
