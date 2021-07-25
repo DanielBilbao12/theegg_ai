@@ -11,34 +11,23 @@ if (!("webkitSpeechRecognition" in window)) {
 
 }
 
+
+
 function iniciar(event) {
     console.log("EMPIEZA EL RECONOCIMIENTO DE VOZ")
     for (i = event.resultIndex; i < event.results.length; i++) {
         document.getElementById("TextoReconocido").innerHTML = event.results[i][0].transcript;
     }
-}
+    //Funciones y variables de arrancar/detener videos
 
-//Funciones para el control de los videos
-function ArrancarVideo() {
-    var Video = document.getElementById("EtiquetaVideo");
-    var Youtube = document.getElementById("EtiquetaiFrame");
-    Video.pause();
-    Youtube.pause();
-    while (texto != "iniciar") {
-        Video.pause();
-        Youtube.pause();
+    //En primer lugar almaceno el reconocimiento en una variable y la printeo en consola para comprobar
+    var texto = document.getElementById("TextoReconocido").innerText;
+    console.log("EL TEXTO RECONOCIDO ES: " + texto);
+    //Evaluo si coincide con la orden de PLAY
+    if (texto = "iniciar") {
+        document.getElementById("EtiquetaiFrame").autoplay();
     }
-    Video.play();
-    Youtube.play();
-}
 
-function PararVideo() {
-    var Video = document.getElementById("EtiquetaVideo");
-    var Youtube = document.getElementById("EtiquetaiFrame");
-    if (texto = "detener") {
-        Video.pause();
-        Youtube.pause();
-    }
 }
 
 reconocimiento.start();
