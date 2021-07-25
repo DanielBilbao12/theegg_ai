@@ -1,6 +1,6 @@
 //Botones control de video
 var Video = document.getElementById("EtiquetaVideo");
-alert("EN PRIMER LUGAR, HACE FALTA INICIAR EL VIDEO MANUALMENTE PARA POSTERIORMENTE CONTROLARLO POR VOZ");
+alert("EN PRIMER LUGAR, HACE FALTA INICIAR EL VIDEO MANUALMENTE PARA POSTERIORMENTE CONTROLARLO POR VOZ, ADEMAS DEBE PERMITIR EL USO DEL MICROFONO");
 function PausaPlay() {
     if (Video.paused)
         Video.play();
