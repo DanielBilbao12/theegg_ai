@@ -1,3 +1,6 @@
+*{
+    font-family: 'Century Gothic';
+}
 body {
     background-color: lightgreen;
 }
@@ -47,4 +50,11 @@ iframe{
 video {
     margin: 30px;
     margin-top: 5px;
+}
+
+div {
+    padding: 50px;
+    margin: 30px;
+    box-shadow: 0px 0px 12px black;
+    color:black;
 }
