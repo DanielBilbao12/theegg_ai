@@ -52,9 +52,25 @@ video {
     margin-top: 5px;
 }
 
-div {
+.Texto {
     padding: 50px;
     margin: 30px;
     box-shadow: 0px 0px 12px black;
     color:black;
 }
+
+button {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: darkslategrey;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+    margin-left:120px;
+    margin-bottom:5px;
+    margin-top:-10px;
+
+}
+

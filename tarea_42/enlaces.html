@@ -23,18 +23,21 @@
     <hr />
 
     <h2>TEXTO RECONOCIDO POR LA API</h2>
-    <div id="TextoReconocido"></div>
-    <script src="Voz.js"></script>
+    <div class="Texto" id="TextoReconocido"></div>
+    <hr />
+
+    <h2>VIDEO CON LA ETIQUETA "VIDEO"</h2>
+    <video width="560" height="315" id="EtiquetaVideo">
+        <source src="videos/Video_Youtube.mp4" type="video/mp4">
+    </video>
+    <div>
+        <button onclick="PausaPlay()">PLAY/PAUSE</button>
+        <button onclick="Restart()">RESTART</button>
+    </div>
     <hr />
 
     <h2>VIDEO CON LA ETIQUETA "IFRAME"</h2>
     <iframe width="560" height="315" id="EtiquetaiFrame" src="https://www.youtube.com/embed/iwaUan_AA2A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <hr />
-
-    <h2>VIDEO CON LA ETIQUETA "VIDEO"</h2>
-    <video width="560" height="315" id="EtiquetaVideo" controls>
-        <source src="videos/Video_Youtube.mp4" type="video/mp4">
-    </video>
 
     <script type="text/javascript" src="Voz.js"></script>
 </body>
