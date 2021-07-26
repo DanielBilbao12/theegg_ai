@@ -1,13 +1,13 @@
 # ENUNCIADO DE LA TAREA 42
 El alumno para superar la tarea debe:
 
-- Diseñar una estructura básica de HTML y verla en el navegador.
+1- Diseñar una estructura básica de HTML y verla en el navegador.
 
-- Introducir algo de color a la página apoyandose en CSS.
+2- Introducir algo de color a la página apoyandose en CSS.
 
-- Añadir un video gracias a la etiqueta video de HTML5.
+3- Añadir un video gracias a la etiqueta video de HTML5.
 
-- Opcional: Darle al play y al pause al video mediante intrucciones por voz utilizando javascript.
+4- Opcional: Darle al play y al pause al video mediante intrucciones por voz utilizando javascript.
 
 # EXPLICACIÓN
 
