@@ -28,8 +28,6 @@ function iniciar(event) {
     for (i = event.resultIndex; i < event.results.length; i++) {
         document.getElementById("TextoReconocido").innerHTML = event.results[i][0].transcript;
     }
-    //Funciones y variables de arrancar/detener videos
-
     //En primer lugar almaceno el reconocimiento en una variable y la printeo en consola para comprobar
     var texto = document.getElementById("TextoReconocido").innerText;
     console.log("EL TEXTO RECONOCIDO ES: " + texto);
