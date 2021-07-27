@@ -1,6 +1,7 @@
-#Tarea 48
+#Tarea 52 - Ejercicio 1
 #Autor: Daniel Bilbao
 #Objetivo del primer ejercicio: 
+#Desarrollar un programa que haga:
 #- Solicitar al usuario que ingrese números, los cuales se guardarán en una lista. Finalizar al ingresar el número 0, el cual no debe guardarse.
 #- A continuación, solicitar al usuario que ingrese un número y, si el número está en la lista, eliminar su primera ocurrencia. Mostrar un mensaje si no es posible eliminar.
 #- Recorrer la lista para imprimir la sumatoria de todos los elementos.
