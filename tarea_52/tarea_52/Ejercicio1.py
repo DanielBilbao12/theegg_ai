@@ -32,7 +32,7 @@ def MostrarLista(lista):
     Return:
         -Muestra por consola la lista introducida como agumento
     """
-    print("\nA CONTINUACION SE MUESTRA LA LISTA:")
+    print("A CONTINUACION SE MUESTRA LA LISTA:")
     for i in range(len(lista)):
         print("El elemento "+str(i+1)+" es:"+str(lista[i]))
 
